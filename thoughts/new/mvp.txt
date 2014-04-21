@@ -1,0 +1,33 @@
+mvp:
+
+users: signin, signup, signout
+ (index show new edit delete)
+
+users have characters
+
+characters: new, index, edit, show, delete
+characters: comments (on page) new edit delete
+star: create delete index
+'fork' a character
+
+"discover characters" --shows most recent
+messages: new index
+
+notifications table
+
+character_subscriptions: create delete
+user_subscriptions: create_delete
+
+version history.
+
+
+
+
+
+
+
+definitions:
+
+"favoriting" a character --shows up on user favorites page
+"follow" a character--receive updates via in-site message
+--updates via email

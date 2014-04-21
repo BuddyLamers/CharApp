@@ -1,0 +1,72 @@
+table: users(
+username
+email
+bio
+password_digest
+session_token
+)
+
+table: characters(
+name
+title
+description
+*-game (can be null)
+private?
+user_id
+)
+
+table: comments(
+author_id
+character_id
+text
+)
+
+table: favorites(
+user_id
+character_id
+)
+
+table:character_subscriptions(
+subscriber_id
+character_id
+)
+
+table: user_subscriptions(
+user_id
+subscriber_id
+)
+
+
+--ask about this...if it is databased right.
+table: messages(
+sender_id
+receiver_id
+title
+body
+)
+
+
+
+*-table: games(
+name(index this)
+tagline
+description
+game_master_id
+setting
+closed
+)
+
+*-table: game_posts(
+character_id (can find author id through this?)
+game_id
+)
+
+*-table: game_entry(
+character_id
+game_id
+)
+
+*-table: game_subscription(
+user_id
+game_id
+)

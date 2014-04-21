@@ -1,0 +1,15 @@
+I created a Gist clone. However, the site is not for programmers, but writers. Instead of posting a short bit of code to share, writers can post a character bio.
+
+
+--the rest is straight gist clone?
+
+Users can comment on, star, follow, and fork other user's character bios.
+
+
+--added features:
+
+Additionally, I have included several features not present in Gist:
+
+There is an on-site messaging system, and posts can be followed and updates can be delivered in-site as well as via email.
+
+I have added live collaboration in the form of real-time messaging.

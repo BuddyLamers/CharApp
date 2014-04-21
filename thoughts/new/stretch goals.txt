@@ -1,0 +1,17 @@
+
+subscriptions update via email as well as in-site messages.
+(ability to enable/disable email updates?)
+
+comment previews/edits
+
+sort by created/updated
+(sort by followed users?)
+
+
+
+live chat ability (save 'online' to the database on sign-in?)
+
+
+
+
+character: compare view (side-by-side)

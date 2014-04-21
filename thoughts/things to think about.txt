@@ -1,0 +1,6 @@
+incorporate multiple files --can add "backstory", "physical attributes", "etc"
+
+be able to store multiple files onto the database (each "post" has multiple "files" eg  each "character" has multiple "  ")
+
+create a join table for notifications
+joins UserID >> a database table

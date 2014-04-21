@@ -1,0 +1,27 @@
+'fork' a character
+subscriptions update via email as well as in-site messages.
+(ability to enable/disable email updates?)
+
+character: compare view (side-by-side)
+
+
+--extra
+
+game: have the ability to add your character to a game (similar to adding snippits to projects in gist.github.com)
+
+public/private games
+
+
+--extra extra
+
+games have a "show" page where players can post data...shows the username and their character, along with a post.
+
+follow a game
+
+invite players to a game from their page
+
+
+
+--massively extra
+
+add additional details to "character", make a complex form.

@@ -1,0 +1,43 @@
+table: users(
+username
+email
+password_digest
+session_token
+)
+
+table: characters(
+name
+bio
+private?
+user_id
+)
+
+table: comments(
+author_id
+character_id
+text
+)
+
+table: favorites(
+user_id
+character_id
+)
+
+table: character_subscriptions(
+subscriber_id
+character_id
+)
+
+table: user_subscriptions(
+user_id
+subscriber_id
+)
+
+--ask about this...if it is databased right.
+table: messages(
+sender_id
+receiver_id
+title
+body
+)
+
