@@ -51,10 +51,11 @@ test:
   username: appacademy
   password:
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: CharApp_production
-  pool: 5
-  username: appacademy
-  password:
+#removed for heroku deployment
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: CharApp_production
+#   pool: 5
+#   username: appacademy
+#   password:

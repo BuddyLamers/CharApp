@@ -2,8 +2,7 @@ mvp:
 
 users: signin, signup, signout
  (index show new edit delete)
-
-users have characters
+actionmailer for signup
 
 characters: new, index, edit, show, delete
 characters: comments (on page) new edit delete
