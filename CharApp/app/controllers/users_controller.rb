@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.set_activation_token
+    #@user.set_activation_token
     if @user.save
       sign_in(@user)
       UserMailer.activation_email(@user).deliver!

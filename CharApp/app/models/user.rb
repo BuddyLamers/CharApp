@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
   attr_reader :password
   before_validation :ensure_token
+  before_validation :ensure_activation_token
 
-  validates :username, :email, :token, presence: true, uniqueness: true
+  validates :username, :email, :token, :activation_token,
+                   presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, :length => { minimum: 6 }
-
+  #validates :activated, :inclusion => { [true, false] }
+  #validate that activated starts false
 
 
   def User.find_by_credentials(username, password)
@@ -36,9 +39,9 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(unencrypted_password)
   end
 
-  def set_activation_token
-      self.activation_token = User.generate_token
-  end
+  # def set_activation_token
+#       self.activation_token = User.generate_token
+#   end
 
 
   def activate!
@@ -51,5 +54,9 @@ class User < ActiveRecord::Base
   private
   def ensure_token
     self.token ||= User.generate_token
+  end
+
+  def ensure_activation_token
+    self.activation_token ||= User.generate_token
   end
 end
