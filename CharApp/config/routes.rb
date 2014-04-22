@@ -4,7 +4,7 @@ CharApp::Application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
 
-  get '/activate', to: 'users#activate'
+  get '/activate_users', to: 'users#activate'
 
   resource :session, only: [:new, :create, :destroy]
 end

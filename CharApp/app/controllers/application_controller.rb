@@ -35,4 +35,10 @@ def require_signed_out!
   redirect_to user_url(current_user) if signed_in?
 end
 
+def require_activated!
+  unless current_user.activated
+  redirect_to new_session_url, notice: "Account inactive. Check your email!"
+  end
+end
+
 end

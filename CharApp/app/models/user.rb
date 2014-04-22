@@ -36,9 +36,9 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(unencrypted_password)
   end
 
-  # def set_activation_token
-#       self.activation_token = User.generate_token
-#   end
+  def set_activation_token
+      self.activation_token = User.generate_token
+  end
 
 
   def activate!
