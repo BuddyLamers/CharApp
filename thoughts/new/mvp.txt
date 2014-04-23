@@ -9,19 +9,19 @@ character_details
 
 characters: comments (on page) new edit delete
 
-star: create delete index
 'fork' a character
+star: create delete index
+
 
 messages: new index
-
 notifications table
-
-"discover characters" --shows most recent
+update via email as well as in-site messages.
+(ability to enable/disable email updates?)
 
 character_subscriptions: create delete
 user_subscriptions: create_delete
 
-version history.
+
 
 
 

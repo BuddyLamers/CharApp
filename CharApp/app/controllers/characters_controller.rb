@@ -5,6 +5,10 @@ class CharactersController < ApplicationController
   end
 
   def create
+    #create character
+
+
+    #create detail using character.details.create()
 
   end
 
@@ -22,7 +26,7 @@ class CharactersController < ApplicationController
   end
 
   def destroy
-
+    #need to dependent destroy the details.
   end
 
 

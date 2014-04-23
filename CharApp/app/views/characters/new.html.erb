@@ -1,0 +1,21 @@
+<section class='new-character-form'>
+
+<form action="<%= new_user_character_url(@user) %>"
+  method="post">
+
+  <label for="character-name">Name</label>
+  <input type="text" name="character[name]" id="character-name">
+
+  <label for="character-tagline">Short Description (200 char)</label>
+  <input type="text" name="character[name]" id="character-tagline">
+
+
+    <%= render partial: "character_details/new" %>
+
+    Have a button to add a detail (needs JS?)
+
+
+  <p><input type="submit" value="Save Character"></p>
+</form>
+
+</section>

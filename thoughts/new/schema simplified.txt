@@ -21,12 +21,20 @@ body
 table: comments(
 author_id
 character_id
-text
+body
 )
 
 table: stars/favorites(
 user_id
 character_id
+)
+
+--ask about this...if it is databased right.
+table: messages(
+sender_id
+receiver_id
+title
+body
 )
 
 table: character_subscriptions(
@@ -37,13 +45,5 @@ character_id
 table: user_subscriptions(
 user_id
 subscriber_id
-)
-
---ask about this...if it is databased right.
-table: messages(
-sender_id
-receiver_id
-title
-body
 )
 
