@@ -1,6 +1,6 @@
+version history.
 
-subscriptions update via email as well as in-site messages.
-(ability to enable/disable email updates?)
+"discover characters" --shows most recent
 
 comment previews/edits
 

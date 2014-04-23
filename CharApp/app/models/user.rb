@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :username, :email, :token, :activation_token,
                    presence: true, uniqueness: true
   validates :password_digest, presence: true
-  validates :password, :length => { minimum: 6 }
+  validates :password, :length => { minimum: 6, :allow_nil => true }
   #validates :activated, :inclusion => { [true, false] }
   #validate that activated starts false
 
@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
     self.token = User.generate_token
-    self.save
+    self.save!
     self.token
   end
 
@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(unencrypted_password)
   end
 
+
+  #not needed
   # def set_activation_token
 #       self.activation_token = User.generate_token
 #   end
