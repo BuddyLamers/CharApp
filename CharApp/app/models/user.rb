@@ -10,6 +10,15 @@ class User < ActiveRecord::Base
   #validates :activated, :inclusion => { [true, false] }
   #validate that activated starts false
 
+  has_many(
+  :characters,
+  class_name: "Character",
+  foreign_key: :user_id,
+  primary_key: :id
+  )
+
+
+
 
   def User.find_by_credentials(username, password)
     user = User.find_by_username(username)

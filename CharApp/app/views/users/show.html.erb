@@ -1,2 +1,62 @@
 
-<h1><%= @user.username %> </h1>
+<% if @user != current_user %>
+<h1 class ="header-text"><%="#{@user.username}'s characters"%></h1>
+<% else %>
+<h1 class ="header-text"><%="Your characters"%></h1>
+<% end %>
+
+<section class="sidebar">
+  <ul class="display-sidebox">
+    <li>All Characters</li>
+    <li>Forked</li>
+    <li>Starred</li>
+  </ul>
+
+  <ul class="display-sidebox-2">
+    <li>Public</li>
+    <li>Private</li>
+  </ul>
+</section>
+
+<main class='main-list'>
+  <% if !@user.characters.nil? %>
+  <ul class="list-display">
+    <% @user.characters.each do |char| %>
+
+    <li>
+      <p>
+        <a href="<%= user_url(@user) %>">
+        <%= @user.username %>
+        </a>
+          /
+        <a href="<%= user_character_url(@user,char) %>">
+          <%= char.name %>
+        </a>
+      </p>
+
+      <small>last active--not implemented</small>
+
+      <i>
+        <%= "#{char.tagline}" %>
+      </i>
+
+      <div class="preview">
+        <% if !char.details.empty? %>
+        <% detail = char.details.first.body[0..200] %>
+        <%= detail %> <%= "..." if detail.length > 200 %>
+        <% end %>
+      </div>
+
+      <div class="social-stats">
+        <ul>
+          <li>details</li>
+          <li>forks</li>
+          <li>comments</li>
+          <li>stars</li>
+        </ul>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+</main>

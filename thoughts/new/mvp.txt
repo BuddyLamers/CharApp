@@ -5,14 +5,18 @@ users: signin, signup, signout
 actionmailer for signup
 
 characters: new, index, edit, show, delete
+character_details
+
 characters: comments (on page) new edit delete
+
 star: create delete index
 'fork' a character
 
-"discover characters" --shows most recent
 messages: new index
 
 notifications table
+
+"discover characters" --shows most recent
 
 character_subscriptions: create delete
 user_subscriptions: create_delete

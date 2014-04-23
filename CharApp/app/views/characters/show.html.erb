@@ -1,0 +1,56 @@
+<header>
+  <h1>
+    <a href="<%= user_url(@character.creator) %>">
+    <%= @character.creator.username %>
+    </a>
+      /
+    <a href="<%= user_character_url(@character.creator,@character) %>">
+      <%= @character.name %>
+    </a>
+  </h1>
+  <small>last active--not implemented</small>
+  <div class="social-stats">
+    <ul>
+      <li>settings</li>
+      <% if @character.creator == current_user %>
+      <li>Edit</li>
+      <li>Delete</li>
+      <% else %>
+      <li>fork</li>
+      <% end %>
+      <li>star</li>
+
+    </ul>
+  </div>
+</header>
+
+<body>
+
+<i class='tagline'><%= @character.tagline %></i>
+
+<section class="sidebar">
+
+  <ul class="display-sidebox">
+    <li>Character Details</li>
+    <li>Revisions</li>
+  </ul>
+</section>
+
+<main class='main-list'>
+  <% if !@character.details.nil? %>
+  <ul class="list-display">
+    <% @character.details.each do |detail|%>
+    <li>
+      <b> <%= detail.title %></b>
+      <p> <%= detail.body %></p>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+</main>
+
+
+
+COMMENTS DOWN HERE SOMEWHERE
+
+</body>

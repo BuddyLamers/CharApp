@@ -1,28 +1,15 @@
-is the "changes" and versions practical to implement?
+should each 'detail' have it's own view?
+
+
+
 
 how could versions be stored? by comparing an entire previous version, sentence by sentence? "highlight" the sentences? good challenge.
-
-
-
-
-
-
-
-what's with the different files?
-as in https://gist.github.com/ChaseWiseman
 
 gist urls by username?
 
 /username/gist_id?
 as in https://gist.github.com/jookyboi/7602184
 
-
-
-
-
---skipping download feature. skip ACE editor and syntax highlighting
-
 follow users or characters or both?
-
 
 live chat.... sounds really complicated: store an 'online' variable in the database

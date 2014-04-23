@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
     user_params[:username],
     user_params[:password]
     )
-    require_activated!
     if @user
+      require_activated!(@user)
       sign_in(@user)
       redirect_to user_url(@user)
     else

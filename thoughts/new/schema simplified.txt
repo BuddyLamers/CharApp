@@ -7,9 +7,15 @@ session_token
 
 table: characters(
 name
-bio
+tagline  --short description showable on main page.
 private?
 user_id
+)
+
+table: character_details(
+character_id
+title
+body
 )
 
 table: comments(
@@ -18,7 +24,7 @@ character_id
 text
 )
 
-table: favorites(
+table: stars/favorites(
 user_id
 character_id
 )
