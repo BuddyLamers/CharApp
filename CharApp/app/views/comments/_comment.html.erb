@@ -1,0 +1,23 @@
+<article class='comment'>
+  <p>
+    <a href="<%= user_url(comment.author) %>">
+      <%= comment.author.username %>
+    </a> commented
+  </p>
+
+  <ul class='bar-right'>
+    <li>minutes ago</li>
+    <% if comment.author == current_user %>
+    <li>edit</li>
+    <li><%= button_to "Delete",
+      user_character_comment_url(comment.author,
+                                 comment.character,
+                                 comment, ),
+            method: :delete%>
+    </li>
+    <% end %>
+  </ul>
+
+
+
+</article>

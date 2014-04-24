@@ -3,10 +3,18 @@
 <form action="<%= user_character_comments_url(
                     @character.creator, @character) %>"
   method="post">
+  <%= auth_token %>
 
-  <label for="comment-text">Comment</label>
-  <input type="text" name="comment" id="comment-text">
+  <label for="comment-body">Write a Comment</label>
+  <input type="text" name="comment[body]" id="comment-text">
 
+  <input type="hidden"
+  name="comment[author_id]"
+  value="<%= current_user.id %>">
+
+  <input type="hidden"
+  name="comment[character_id]"
+  value="<%= @character.id %>">
 
   <p><input type="submit" value="Add Comment"></p>
 </form>

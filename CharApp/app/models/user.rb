@@ -8,12 +8,21 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :password, :length => { minimum: 6, :allow_nil => true }
   #validates :activated, :inclusion => { [true, false] }
-  #validate that activated starts false
+  #validate that activated starts false? no...
 
   has_many(
   :characters, :inverse_of => :creator,
+  dependent: :destroy,
   class_name: "Character",
   foreign_key: :user_id,
+  primary_key: :id
+  )
+
+  has_many(
+  :comments, :inverse_of =>  :author,
+  dependent: :destroy,
+  class_name: "Comment",
+  foreign_key: :author_id,
   primary_key: :id
   )
 

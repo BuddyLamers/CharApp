@@ -21,6 +21,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
+    @comments = @character.comments
     render :show
   end
 
