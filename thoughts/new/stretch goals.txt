@@ -1,5 +1,7 @@
 version history.
 
+collabsible details
+
 "discover characters" --shows most recent
 
 comment previews/edits
