@@ -33,16 +33,25 @@ class CharactersController < ApplicationController
 
   def update
     @character = Character.find(params[:id])
-    if @character.update(character_params)
-      @character.details.each_with_index do |detail, i|
-        detail.update!(detail_params[i])
+    errors = []
+    begin
+      Character.transaction do
+        CharacterDetail.transaction do
+          @character.update!(character_params)
+          @character.details.each_with_index do |detail, i|
+            detail.update!(detail_params[i])
+          end
       end
-      redirect_to user_character_url(current_user, @character)
-    else
-      flash.now[:errors] = @character.errors.full_messages
-      render :edit
     end
-
+    rescue ActiveRecord::RecordInvalid => e
+      #makes you start over if you mess up...fix later
+      @character = Character.find(params[:id])
+      @details = @character.details
+      flash.now[:errors] = ["One or more fields were invalid"]
+      render :edit
+    else
+      redirect_to user_character_url(current_user, @character)
+    end
   end
 
   def destroy
