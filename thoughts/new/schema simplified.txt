@@ -26,8 +26,8 @@ body
 )
 
 table: forks(
-character_id
-user_id
+from_character_id
+to_character_id
 )
 
 table: stars/favorites(
