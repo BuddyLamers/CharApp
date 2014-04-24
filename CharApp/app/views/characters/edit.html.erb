@@ -1,0 +1,32 @@
+<main class='new-character-form'>
+
+<form action="<%= user_character_url(current_user, @character) %>"
+  method="post">
+  <input type='hidden' name='_method' value='PATCH'></input>
+  <%= auth_token %>
+
+  <label for="character-name">Name</label>
+  <input type="text" name="character[name]"
+   id="character-name" value="<%= @character.name %>">
+
+  <label for="character-tagline">Tagline (Short description)</label>
+  <input type="text" name="character[tagline]"
+  id="character-tagline" value="<%= @character.tagline %>">
+
+  <input type='hidden' name="character[id]" value="<%= @character.id %>">
+
+<%if @details %>
+  <% @details.length.times do |i| %>
+  <% @detail_num = i %>
+    <%= render partial: "character_details/edit" %>
+  <% end %>
+<% end %>
+
+
+    Have a button to add a detail (needs JS?)
+
+
+  <p><input type="submit" value="Save Character"></p>
+</form>
+
+</main>

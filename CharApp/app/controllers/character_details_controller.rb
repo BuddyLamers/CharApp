@@ -1,15 +1,8 @@
 class CharacterDetailsController < ApplicationController
 
-  def create
-
-  end
-
-  def edit
-
-  end
-
   def destroy
-
+    @detail = CharacterDetail.find(params[:id])
+    @detail.destroy!
   end
 
 end

@@ -13,8 +13,17 @@
     <ul>
       <li>settings</li>
       <% if @character.creator == current_user %>
-      <li>Edit</li>
-      <li>Delete</li>
+      <li>
+      <%= button_to "Edit",
+            edit_user_character_url(@character.creator, @character),
+            method: :get %>
+      </li>
+      <li>
+      <%= button_to "Delete",
+            user_character_url(@character.creator, @character),
+            method: :delete %>
+            <!-- confirmation message with JS -->
+      </li>
       <% else %>
       <li>fork</li>
       <% end %>
@@ -36,6 +45,8 @@
   </ul>
 </section>
 
+<!-- this section should be refactoreed to render partial
+detail _show -->
 <main class='main-list'>
   <% if !@character.details.nil? %>
   <ul class="list-display">

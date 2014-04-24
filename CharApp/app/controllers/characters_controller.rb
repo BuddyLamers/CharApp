@@ -25,14 +25,29 @@ class CharactersController < ApplicationController
   end
 
   def edit
+    @character = Character.find(params[:id])
+    @details = @character.details
+    render :edit
 
   end
 
   def update
+    @character = Character.find(params[:id])
+    if @character.update(character_params)
+      @character.details.each_with_index do |detail, i|
+        detail.update!(detail_params[i])
+      end
+      redirect_to user_character_url(current_user, @character)
+    else
+      flash.now[:errors] = @character.errors.full_messages
+      render :edit
+    end
 
   end
 
   def destroy
+    @character = Character.find(params[:id])
+    @character.destroy!
     #need to dependent destroy the details.
   end
 

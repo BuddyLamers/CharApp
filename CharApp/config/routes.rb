@@ -6,7 +6,7 @@ CharApp::Application.routes.draw do
 
   get '/activate_users', to: 'users#activate'
   resources :users, only: [:new, :create, :show] {
-    resources :characters, only: [:new, :create, :show]{
+    resources :characters, only: [:new, :create, :destroy, :edit, :update, :show]{
       resources :comments, only: [:create, :destroy]
     }
   }

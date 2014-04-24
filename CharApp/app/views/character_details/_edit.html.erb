@@ -1,14 +1,13 @@
-<section class='new-character-detail'>
-
+<section class='edit-character-detail'>
   <label for="detail-title">Detail Title</label>
   <input type="text"
   name="character_detail[<%= @detail_num %>][title]"
-  value="" id="detail-title">
+  value="<%= @details[@detail_num].title %>" id="detail-title">
 
   <label for="detail-body">Detail Body</label>
   <input type="text"
   name="character_detail[<%= @detail_num %>][body]"
-  value="" id="detail-body">
+  value="<%= @details[@detail_num].body %>" id="detail-body">
 
 
 </section>

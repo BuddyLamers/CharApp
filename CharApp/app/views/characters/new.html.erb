@@ -1,4 +1,4 @@
-<section class='new-character-form'>
+<main class='new-character-form'>
 
 <form action="<%= user_characters_url(current_user) %>"
   method="post">
@@ -7,10 +7,10 @@
   <label for="character-name">Name</label>
   <input type="text" name="character[name]" id="character-name">
 
-  <label for="character-tagline">Short Description (100 char)</label>
+  <label for="character-tagline">Tagline (Short description)</label>
   <input type="text" name="character[tagline]" id="character-tagline">
 
-  <% @detail_total = 1 %>
+  <% @detail_num = 1 %>
     <%= render partial: "character_details/new" %>
 
     Have a button to add a detail (needs JS?)
@@ -19,4 +19,4 @@
   <p><input type="submit" value="Save Character"></p>
 </form>
 
-</section>
+</main>
