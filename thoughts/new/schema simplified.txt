@@ -10,6 +10,7 @@ name
 tagline  --short description showable on main page.
 private?
 user_id
+forked_id
 )
 
 table: character_details(
@@ -24,9 +25,14 @@ character_id
 body
 )
 
-table: stars/favorites(
-user_id
+table: forks(
 character_id
+user_id
+)
+
+table: stars/favorites(
+character_id
+user_id
 )
 
 --ask about this...if it is databased right.

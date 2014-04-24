@@ -1,0 +1,12 @@
+form within a form?
+
+  <form class="detail-delete-button"
+  action="<%= user_character_comment_url(current_user, @character, @details[@detail_num]) %>"
+  method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="delete">
+
+    <p><input type="submit" value="Delete"></p>
+  </form>
+  
+  
