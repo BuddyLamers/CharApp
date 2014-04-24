@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   #validate that activated starts false
 
   has_many(
-  :characters,
+  :characters, :inverse_of => :creator,
   class_name: "Character",
   foreign_key: :user_id,
   primary_key: :id

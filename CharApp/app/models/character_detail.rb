@@ -1,10 +1,10 @@
 class CharacterDetail < ActiveRecord::Base
 
-  validates :character_id, :title, :body, presence: true
-
+  validates :title, :body, presence: true
+  validates :character, presence: true
 
   belongs_to(
-  :character,
+  :character, :inverse_of => :details,
   class_name: "Character",
   foreign_key: :character_id,
   primary_key: :id)
