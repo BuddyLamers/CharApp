@@ -13,3 +13,10 @@ Additionally, I have included several features not present in Gist:
 There is an on-site messaging system, and posts can be followed and updates can be delivered in-site as well as via email.
 
 I have added live collaboration in the form of real-time messaging.
+
+
+
+gist does not allow searching by anything other than
+  gist title or details
+
+you cannot search for a user
