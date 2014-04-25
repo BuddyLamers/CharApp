@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
     @character.user_id = current_user.id
     @character.details.new(detail_params)
-
+    #fails if a character is saved with no details (fork)
     if @character.save
       redirect_to user_character_url(current_user, @character)
     else
@@ -58,6 +58,7 @@ class CharactersController < ApplicationController
   def destroy
     @character = Character.find(params[:id])
     @character.destroy!
+    redirect_to user_url(current_user)
     #need to dependent destroy the details.
   end
 

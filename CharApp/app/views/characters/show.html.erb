@@ -25,7 +25,18 @@
             <!-- confirmation message with JS -->
       </li>
       <% else %>
-      <li>fork</li>
+      <li>
+
+        <% if !current_user.has_already_forked_character?(@character) %>
+        <%= button_to "Fork",
+        user_character_forks_url(@character.creator, @character),
+        method: :post
+         %>
+         <% else %>
+         Forked!
+         <% end %>
+
+      </li>
       <% end %>
       <li>star</li>
 

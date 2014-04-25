@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
 
   #has many forks through?
 
+
+
   def User.find_by_credentials(username, password)
     user = User.find_by_username(username)
     user.try(:is_password?, password) ? user : nil
@@ -35,6 +37,20 @@ class User < ActiveRecord::Base
 
   def User.generate_token
     SecureRandom::urlsafe_base64(16)
+  end
+
+  def forked_characters
+    self.characters.map{|char| char if char.is_fork_duplicate?}
+  end
+
+  def has_already_forked_character?(character)
+    forked_characters.each do |f_char|
+      if f_char.source_character == character
+        return true
+      end
+    end
+  false
+
   end
 
   def reset_session_token!

@@ -8,7 +8,7 @@
 <section class="sidebar">
   <ul class="display-sidebox">
     <li>All Characters</li>
-    <li>Forked</li>
+    <li>Forked </li>
     <li>Starred</li>
   </ul>
 
@@ -36,6 +36,15 @@
 
       <small>last active--not implemented</small>
 
+      <% if char.is_fork_duplicate? %>
+      <small>Forked from
+
+        <a href='<%= user_url(char.original_creator) %>'>
+        <%= char.original_creator.username %>
+        </a>
+      </small>
+      <% end %>
+
       <i>
         <%= "#{char.tagline}" %>
       </i>
@@ -50,7 +59,14 @@
       <div class="social-stats">
         <ul>
           <li>details</li>
-          <li>forks</li>
+          <li>forks
+            <i class= "forks-count">
+              <%= char.duplicate_forks.count %>
+              <!--
+                use a counter cache here
+              -->
+            </i>
+          </li>
           <li>comments</li>
           <li>stars</li>
         </ul>

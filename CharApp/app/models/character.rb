@@ -1,6 +1,7 @@
 class Character < ActiveRecord::Base
   validates :name, :tagline, presence: true
-  validates :creator, :details, :comments, :forks, presence: true
+  validates :creator, presence: true
+
   #validates :private, :inclusion => { [true, false] }
 
 
@@ -27,6 +28,7 @@ class Character < ActiveRecord::Base
 
   has_many(
   :duplicate_forks, inverse_of: :from_character,
+  dependent: :destroy,
   class_name: "Fork",
   foreign_key: :from_character_id,
   primary_key: :id
@@ -39,7 +41,24 @@ class Character < ActiveRecord::Base
   primary_key: :id
   )
 
-  #has a source_character through source_fork
+  has_one(
+  :source_character,
+  through: :source_fork,
+  source: :from_character
+  )
+
+  def is_fork_duplicate?
+    self.source_fork.nil? ? false : true
+  end
+
+  def original_creator
+    self.source_character.creator
+  end
+
+  def has_been_forked_by_current_user
+
+  end
+
 
 
 end
