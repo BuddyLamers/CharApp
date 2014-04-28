@@ -8,7 +8,7 @@
       <%= @character.name %>
     </a>
   </h1>
-  <small>last active--not implemented</small>
+  <small><%= @character.updated_at %></small>
   <div class="social-stats">
     <ul>
       <li>settings</li>
@@ -38,7 +38,17 @@
 
       </li>
       <% end %>
-      <li>star</li>
+      <li>
+      <% if !current_user.has_already_starred_character?(@character) %>
+              <%= button_to "Star",
+              user_character_stars_url(@character.creator, @character),
+              method: :post
+               %>
+               <% else %>
+               Starred!
+               <% end %>
+
+      </li>
 
     </ul>
   </div>
@@ -51,8 +61,12 @@
 <section class="sidebar">
 
   <ul class="display-sidebox">
-    <li>Character Details</li>
-    <li>Revisions</li>
+        <li>Character Details
+          <i class= "details-count">
+            <%= @character.details_count %>
+          </i>
+        </li>
+        <li>Revisions --not implemented</li>
   </ul>
 </section>
 
@@ -71,7 +85,7 @@ detail _show -->
   <% end %>
 </main>
 
-COMMENTS DOWN HERE SOMEWHERE
+
 
 <%= render @comments %>
 

@@ -7,9 +7,22 @@
 
 <section class="sidebar">
   <ul class="display-sidebox">
-    <li>All Characters</li>
-    <li>Forked </li>
-    <li>Starred</li>
+   <!-- again use counter caches -->
+   <li>All Characters
+     <i class= "characters-count">
+       <%= @user.characters_count %>
+     </i>
+   </li>
+   <li>Forked
+     <i class= "forked-characters-count">
+       <%= @user.forked_characters.count %>
+     </i>
+   </li>
+   <li>Starred
+     <i class= "starred-characters-count">
+       <%= @user.starred_characters.count %>
+     </i>
+   </li>
   </ul>
 
   <ul class="display-sidebox-2">
@@ -34,7 +47,7 @@
         </a>
       </p>
 
-      <small>last active--not implemented</small>
+      <small>ast active <%= char.updated_at %></small>
 
       <% if char.is_fork_duplicate? %>
       <small>Forked from
@@ -58,17 +71,26 @@
 
       <div class="social-stats">
         <ul>
-          <li>details</li>
-          <li>forks
-            <i class= "forks-count">
-              <%= char.duplicate_forks.count %>
-              <!--
-                use a counter cache here
-              -->
+         <li>Details
+           <i class= "details-count">
+             <%= char.details_count %>
+           </i>
+         </li>
+         <li>Forks
+           <i class= "forks-count">
+             <%= char.duplicate_forks.count %>
+             </i>
+          </li>
+          <li>Comments
+            <i class= "comments-count">
+                <%= char.comments_count %>
             </i>
           </li>
-          <li>comments</li>
-          <li>stars</li>
+          <li>stars
+            <i class= "stars-count">
+              <%= char.stars_count %>
+            </i>
+          </li>
         </ul>
       </div>
     </li>

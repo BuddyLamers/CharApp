@@ -8,7 +8,8 @@ CharApp::Application.routes.draw do
   resources :users, only: [:new, :create, :show, :index] {
     resources :characters, only: [:new, :create, :destroy, :edit, :update, :show]{
       resources :comments, only: [:create, :destroy]
-      resources :forks, only: [:create, :destroy]
+      resources :forks, only: [:create]
+      resources :stars, only: [:create]
     }
   }
 
