@@ -47,7 +47,7 @@
         </a>
       </p>
 
-      <small>ast active <%= char.updated_at %></small>
+      <small>last active <%= char.updated_at %></small>
 
       <% if char.is_fork_duplicate? %>
       <small>Forked from
@@ -79,7 +79,7 @@
          <li>Forks
            <i class= "forks-count">
              <%= char.duplicate_forks_count %>
-             </i>
+           </i>
           </li>
           <li>Comments
             <i class= "comments-count">
