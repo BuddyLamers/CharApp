@@ -2,7 +2,8 @@
   <p>
     <a href="<%= user_url(comment.author) %>">
       <%= comment.author.username %>
-    </a> commented
+    </a>
+    <%= comment.body %>
   </p>
 
   <ul class='bar-right'>

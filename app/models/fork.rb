@@ -10,6 +10,7 @@ class Fork < ActiveRecord::Base
 
   belongs_to(
   :from_character, :inverse_of => :duplicate_forks,
+  counter_cache: true,
   class_name: "Character",
   foreign_key: :from_character_id,
   primary_key: :id)

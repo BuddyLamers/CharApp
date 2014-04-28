@@ -5,6 +5,7 @@ class CharacterDetail < ActiveRecord::Base
 
   belongs_to(
   :character, :inverse_of => :details,
+  counter_cache: :details_count,
   class_name: "Character",
   foreign_key: :character_id,
   primary_key: :id)

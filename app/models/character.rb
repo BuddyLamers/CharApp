@@ -6,7 +6,7 @@ class Character < ActiveRecord::Base
 
 
   belongs_to(
-  :creator,
+  :creator, counter_cache: true,
   class_name: 'User',
   foreign_key: :user_id,
   primary_key: :id
