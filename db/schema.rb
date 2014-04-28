@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428162126) do
+ActiveRecord::Schema.define(version: 20140428200116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140428162126) do
     t.integer  "receiver_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "already_read", default: false
   end
 
   add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
@@ -92,10 +93,12 @@ ActiveRecord::Schema.define(version: 20140428162126) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "activated",        default: false
+    t.boolean  "activated",               default: false
     t.string   "activation_token"
     t.integer  "characters_count"
     t.integer  "stars_count"
+    t.integer  "received_messages_count"
+    t.integer  "sent_messages_count"
   end
 
   add_index "users", ["password_digest"], name: "index_users_on_password_digest", using: :btree

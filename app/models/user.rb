@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   has_many(
   :received_messages,
   class_name: "Message",
-  foreign_key: :sender_id,
+  foreign_key: :receiver_id,
   primary_key: :id
   )
 
@@ -62,7 +62,10 @@ class User < ActiveRecord::Base
 
   #has many forks through?
 
-
+  def User.find_id_by_username(username)
+    user = User.find_by(username: username)
+    user.id
+  end
 
   def User.find_by_credentials(username, password)
     user = User.find_by_username(username)
@@ -71,6 +74,10 @@ class User < ActiveRecord::Base
 
   def User.generate_token
     SecureRandom::urlsafe_base64(16)
+  end
+
+  def unread_messages
+    self.recieved_messages.where(already_read: false)
   end
 
   def forked_characters
