@@ -1,13 +1,13 @@
 <article class='comment'>
-  <p>
+  <div>
     <a href="<%= user_url(comment.author) %>">
       <%= comment.author.username %>
     </a>
-    <%= comment.body %>
-  </p>
+    <p><%= comment.body %></p>
+  </div>
 
   <ul class='bar-right'>
-    <li>minutes ago</li>
+    <li><%= comment.created_at %></li>
     <% if comment.author == current_user %>
     <li>edit</li>
     <li><%= button_to "Delete",
