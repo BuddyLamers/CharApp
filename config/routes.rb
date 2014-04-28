@@ -11,7 +11,12 @@ CharApp::Application.routes.draw do
       resources :forks, only: [:create]
       resources :stars, only: [:create]
     }
+
   }
+
+  resources :messages, only: [:new, :create]
+  get '/inbox', to: 'messages#inbox'
+  get '/sentbox', to: 'messages#sentbox'
 
 
 
