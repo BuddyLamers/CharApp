@@ -1,1 +1,26 @@
 <h1>Inbox</h1>
+
+
+<!-- use tables here -->
+<section class="messages">
+  <% @unread_messages.each do |message| %>
+  <a href="<%= message_url(message) %>">
+    <ul class="unread message-item">
+      <li><%= message.sender.username %></li>
+      <li><%= message.title %></li>
+      <li><%= message.body %></li>
+    </ul>
+  </a>
+  <% end %>
+
+  <% @read_messages.each do |message| %>
+  <a href="<%= message_url(message) %>">
+    <ul class="unread message-item">
+      <li><%= message.sender.username %></li>
+      <li><%= message.title %></li>
+      <li><%= message.body %></li>
+    </ul>
+  </a>
+  <% end %>
+</section>
+

@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20140428200116) do
     t.integer  "receiver_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "already_read", default: false
+    t.boolean  "unread",      default: true
   end
 
   add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree

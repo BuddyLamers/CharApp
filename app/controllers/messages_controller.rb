@@ -2,15 +2,16 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    # @receiver = User.find(params[:user_id])
     @receiver = User.new
+    @receiver.username = params[:username]
+    #ADD onto the url with the id..from 'message me'
+
     render :new
   end
 
   def create
     @receiver = User.find_by(username: params[:receiver_name])
     @message = Message.new(message_params)
-
     @message.receiver_id = @receiver.id
 
     if @message.save
@@ -22,11 +23,19 @@ class MessagesController < ApplicationController
   end
 
   def inbox
-    @messages = current_user.received_messages
+    @unread_messages = current_user.received_messages.where(unread: true)
+    @read_messages = current_user.received_messages.where(unread: false)
+
   end
 
   def sentbox
-    @messages = current_user.sent_messages
+    @sent_messages = current_user.sent_messages
+
+  end
+
+  def show
+    @message = Message.find(params[:id])
+    render :show
   end
 
   def message_params

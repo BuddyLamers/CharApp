@@ -13,7 +13,7 @@ CharApp::Application.routes.draw do
     }
   }
 
-  resources :messages, only: [:new, :create]
+  resources :messages, only: [:new, :create, :show]
   get '/inbox', to: 'messages#inbox'
   get '/sentbox', to: 'messages#sentbox'
 

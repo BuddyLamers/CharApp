@@ -1,0 +1,13 @@
+<section class="message-show">
+
+  <ul class= "message-attribute-list">
+    <li>From: <%= @message.sender.username %></li>
+    <li>To: <%= @message.receiver.username %></li>
+    <li>Title: <%= @message.title %></li>
+    <li>Body: <%= @message.body %></li>
+  </ul>
+
+</section>
+
+<%= link_to "reply", new_message_url(username: @message.sender.username) %>
+

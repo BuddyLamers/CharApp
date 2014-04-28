@@ -62,9 +62,9 @@ class User < ActiveRecord::Base
 
   #has many forks through?
 
-  def User.find_id_by_username(username)
-    user = User.find_by(username: username)
-    user.id
+  def User.find_username_by_id(id)
+    user = User.find_by(id: id)
+    user.username
   end
 
   def User.find_by_credentials(username, password)
