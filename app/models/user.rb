@@ -19,6 +19,24 @@ class User < ActiveRecord::Base
   )
 
   has_many(
+    :stars, :inverse_of =>  :user,
+    dependent: :destroy,
+    class_name: "Star",
+    foreign_key: :user_id,
+    primary_key: :id
+    )
+
+    has_many(
+    :starred_characters,
+    through: :stars,
+    source: :character)
+
+    #method is used for for forked characters
+
+
+
+
+  has_many(
   :comments, :inverse_of =>  :author,
   dependent: :destroy,
   class_name: "Comment",
@@ -40,18 +58,32 @@ class User < ActiveRecord::Base
   end
 
   def forked_characters
-    self.characters.map{|char| char if char.is_fork_duplicate?}
-  end
+    forked_chars = []
+        self.characters.each do |char|
+          forked_chars << char if char.is_fork_duplicate?
+        end
+        return forked_chars
+    end
 
   def has_already_forked_character?(character)
-    forked_characters.each do |f_char|
-      if f_char.source_character == character
+    return false if forked_characters.empty?
+
+    self.forked_characters.each do |f_char|
+      if f_char.try(:source_character) == character
         return true
       end
     end
   false
 
   end
+
+  def has_already_starred_character?(character)
+
+      if self.starred_characters.include?(character)
+        return true
+      end
+      false
+    end
 
   def reset_session_token!
     self.token = User.generate_token

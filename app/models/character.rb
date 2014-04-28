@@ -26,6 +26,13 @@ class Character < ActiveRecord::Base
   primary_key: :id
   )
 
+   has_many(
+   :stars,
+   class_name: 'Star',
+   foreign_key: :character_id,
+   primary_key: :id
+   )
+
   has_many(
   :duplicate_forks, inverse_of: :from_character,
   dependent: :destroy,
@@ -36,6 +43,7 @@ class Character < ActiveRecord::Base
 
   has_one(
   :source_fork, inverse_of: :to_character,
+  dependent: :destroy,
   class_name: "Fork",
   foreign_key: :to_character_id,
   primary_key: :id
