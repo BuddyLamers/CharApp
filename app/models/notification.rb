@@ -38,16 +38,17 @@ class Notification < ActiveRecord::Base
     case self.event_name
     when :new_comment_on_character
       comment = self.notifiable
-      user_character_url(comment.character.owner.id, comment.character_id)
+      user_character_url(comment.character.creator.id, comment.character_id)
     when :new_message
       message = self.notifiable
       message_url(message.id)
+      #optionally inbox
     when :new_fork_of_character
       fork = self.notifiable
-      character_url(fork.from_character_id)
+      character_url(fork.to_character_id)
     when :new_star_of_character
       star = self.notifiable
-      character_url(star.character_id)
+      user_url(star.user)
     end
   end
 
@@ -56,10 +57,22 @@ class Notification < ActiveRecord::Base
     when :new_comment_on_character
       comment = self.notifiable
       comment_user = comment.author
-      #possibly author
       character = comment.character
-
       "#{comment_user.username} commented on your character #{character.name}"
+    when :new_message
+      message = self.notifiable
+      message_sender = message.sender
+      "#{message_sender.username} sent you a message!"
+    when :new_fork_of_character
+      fork = self.notifiable
+      fork_user = fork.user
+      character = fork.character
+      "#{fork_user.username} starred your character #{character.name}"
+    when :new_star_of_character
+      star = self.notifiable
+      star_user = star.user
+      character = star.character
+      "#{star_user.username} starred your character #{character.name}"
     end
   end
 

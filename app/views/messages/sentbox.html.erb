@@ -6,7 +6,11 @@
     <tr class="unread message-item">
       <a href="<%= message_url(message) %>">Link here for now
       <td><%= message.receiver.username %></td>
-      <td><%= message.title %></td>
+      <td>
+        <a href="<%= message_url(message) %>">
+          <%= message.title %>
+        </a>
+      </td>
       <td><%= message.body[0..99] %></td>
       </a>
     </tr>

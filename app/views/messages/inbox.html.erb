@@ -4,21 +4,29 @@
 <!-- use tables here -->
 <table class="messages">
   <% @unread_messages.each do |message| %>
-  <a href="<%= message_url(message) %>">
+
     <tr class="unread message-item">
       <td><%= message.sender.username %></td>
-      <td><%= message.title %></td>
+      <td>
+        <a href="<%= message_url(message) %>">
+          <%= message.title %>
+        </a>
+      </td>
       <td><%= message.body[0..99] %></td>
     </tr>
-  </a>
+
   <% end %>
 
 
   <% @read_messages.each do |message| %>
   <a href="<%= message_url(message) %>">
-    <tr class="unread message-item">
+    <tr class="read message-item">
       <td><%= message.sender.username %></td>
-      <td><%= message.title %></td>
+      <td>
+        <a href="<%= message_url(message) %>">
+          <%= message.title %>
+        </a>
+      </td>
       <td><%= message.body[0..99] %></td>
     </tr>
   </a>

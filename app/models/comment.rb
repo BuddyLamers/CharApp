@@ -24,7 +24,7 @@ class Comment < ActiveRecord::Base
   )
 
   def set_notification
-
+    #notification.user here is the user who is notified
     notification = self.notifications.unread.event(:new_comment_on_character).new
     notification.user = self.character.creator
     notification.save!
