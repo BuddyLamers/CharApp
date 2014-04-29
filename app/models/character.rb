@@ -14,6 +14,7 @@ class Character < ActiveRecord::Base
 
   has_many(
   :details, inverse_of: :character,
+  dependent: :destroy,
   class_name: "CharacterDetail",
   foreign_key: :character_id,
   primary_key: :id
@@ -21,6 +22,7 @@ class Character < ActiveRecord::Base
 
   has_many(
   :comments, inverse_of: :character,
+  dependent: :destroy,
   class_name: "Comment",
   foreign_key: :character_id,
   primary_key: :id
@@ -29,6 +31,7 @@ class Character < ActiveRecord::Base
    has_many(
    :stars,
    class_name: 'Star',
+   dependent: :destroy,
    foreign_key: :character_id,
    primary_key: :id
    )

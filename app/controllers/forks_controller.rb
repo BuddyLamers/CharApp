@@ -3,7 +3,7 @@ class ForksController < ApplicationController
   def create
     #check if a fork already exists in the view-remove button
     character_to_fork = Character.find(params[:character_id])
-
+    #you have to_character_id here...
     duplicate_character = character_to_fork.dup
     duplicate_details = create_attributes_array(
                       character_to_fork.details.dup)
