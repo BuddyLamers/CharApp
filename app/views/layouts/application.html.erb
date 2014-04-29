@@ -8,8 +8,8 @@
     <%= stylesheet_link_tag "application" %>
 </head>
 <body>
-
-  <section class="navbar">
+  <section class="navbar-wrap">
+  <article class="navbar group">
 
     <% if signed_in? %>
     <ul class="info">
@@ -25,15 +25,15 @@
 
 
     <ul class="social">
-      <li>
-        <a href="<%= notifications_url %>">Notifications</a>
+      <li class="dropdown-list">
+          <a href="<%= notifications_url %>">Notifications</a>
 
-        <% unless current_user.notifications.empty? %>
-          <strong><%= current_user.notifications.unread.size %></strong>
-          <ul>
-            <%= render partial: "notifications/notification", collection:     current_user.notifications.unread %>
-          </ul>
-        <% end %>
+          <% unless current_user.notifications.empty? %>
+            <i class="count"><%= current_user.notifications.unread.size %></i>
+            <ul class="dropdown-item">
+              <%= render partial: "notifications/notification", collection:     current_user.notifications.unread %>
+            </ul>
+          <% end %>
       </li>
       <li>
           <%= link_to "Inbox", inbox_url %>
@@ -55,6 +55,7 @@
     </ul>
     <% end %>
 
+    </article>
   </section>
 
   <% if flash[:errors] %>

@@ -1,64 +1,77 @@
-<header>
-  <h1>
-    <a href="<%= user_url(@character.creator) %>">
-    <%= @character.creator.username %>
-    </a>
-      /
-    <a href="<%= character_url(@character) %>">
-      <%= @character.name %>
-    </a>
-  </h1>
-  <small>Updated <%=time_ago_in_words(@character.updated_at) %> ago</small>
-  <div class="header-social">
-    <ul>
-      <li>settings</li>
-      <% if @character.creator == current_user %>
-      <li>
-      <%= button_to "Edit",
-            edit_character_url(@character),
-            method: :get %>
-      </li>
-      <li>
-      <%= button_to "Delete",
-            character_url(@character),
-            method: :delete %>
-            <!-- confirmation message with JS -->
-      </li>
-      <% else %>
-      <li>
+<header class="page-header group">
+  <ul class="info-vertical">
 
-        <% if !current_user.has_already_forked_character?(@character) %>
-        <%= button_to "Fork",
-        character_forks_url(@character),
-        method: :post
-         %>
-         <% else %>
-         Forked!
-         <% end %>
+    <li>
+      <div class="title-text">
+        <a href="<%= user_url(@character.creator) %>">
+        <%= @character.creator.username %>
+        </a>
+          /
+        <a href="<%= character_url(@character) %>">
+          <%= @character.name %>
+        </a>
+      </div>
+    </li>
 
-      </li>
-      <% end %>
-      <li>
-      <% if !current_user.has_already_starred_character?(@character) %>
-              <%= button_to "Star",
-              character_stars_url(@character),
-              method: :post
-               %>
-               <% else %>
-               Starred!
-               <% end %>
+    <li>
+      <small>Updated <%=time_ago_in_words(@character.updated_at) %> ago</small>
+    </li>
 
-      </li>
+  </ul>
 
-    </ul>
-  </div>
+
+
+  <ul class="social">
+    <li>settings</li>
+    <% if @character.creator == current_user %>
+    <li>
+    <%= button_to "Edit",
+          edit_character_url(@character),
+          method: :get %>
+    </li>
+    <li>
+    <%= button_to "Delete",
+          character_url(@character),
+          method: :delete %>
+          <!-- confirmation message with JS -->
+    </li>
+    <% else %>
+    <li>
+
+      <% if !current_user.has_already_forked_character?(@character) %>
+      <%= button_to "Fork",
+      character_forks_url(@character),
+      method: :post
+       %>
+       <% else %>
+       Forked!
+       <% end %>
+
+    </li>
+    <% end %>
+    <li>
+    <% if !current_user.has_already_starred_character?(@character) %>
+            <%= button_to "Star",
+            character_stars_url(@character),
+            method: :post
+             %>
+             <% else %>
+             Starred!
+             <% end %>
+
+    </li>
+
+  </ul>
+
 </header>
 
 <body>
 
-<i class='tagline'><%= @character.tagline %></i>
 
+<div class="content">
 <section class="sidebar">
+
+  <i class='tagline'><%= @character.tagline %></i>
 
   <ul class="display-sidebox">
         <li>Character Details
@@ -72,24 +85,32 @@
 
 <!-- this section should be refactoreed to render partial
 detail _show -->
-<main class='main-list'>
+<main class='main-content'>
   <% if !@character.details.nil? %>
-  <ul class="list-display">
-    <% @character.details.each do |detail|%>
-    <li>
-      <b> <%= detail.title %></b>
-      <p> <%= detail.body %></p>
-    </li>
-    <% end %>
+  <ul class="main-content-list">
+    <%= render @character.details %>
   </ul>
   <% end %>
+
+
+
+  <ul class="main-content-list">
+    <li>
+      <%= render partial: 'comments/form' %>
+    </li>
+
+    <%= render @comments %>
+
+  </ul>
+
 </main>
+</div>
 
 
 
-<%= render @comments %>
 
-<%= render partial: 'comments/form' %>
+
+
 
 
 

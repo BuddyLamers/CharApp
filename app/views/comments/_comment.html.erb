@@ -1,23 +1,24 @@
-<article class='comment'>
-  <div>
-    <a href="<%= user_url(comment.author) %>">
-      <%= comment.author.username %>
-    </a>
-    <p><%= comment.body %></p>
+<li class='comment'>
+  <header class="item-header group">
+    <div class="info">
+      <a href="<%= user_url(comment.author) %>">
+        <%= comment.author.username %>
+      </a>commented
+    </div>
+
+    <ul class='social'>
+      <li><%=time_ago_in_words(comment.created_at) %> ago</li>
+      <% if comment.author == current_user %>
+      <li>edit</li>
+      <li><%= button_to "Delete",
+        character_comment_url(comment.character,
+                              comment, ),
+              method: :delete%>
+      </li>
+      <% end %>
+    </ul>
+  </header>
+  <div class="item-body-text">
+    <%= comment.body %>
   </div>
-
-  <ul class='bar-right'>
-    <li><%=time_ago_in_words(comment.created_at) %> ago</li>
-    <% if comment.author == current_user %>
-    <li>edit</li>
-    <li><%= button_to "Delete",
-      character_comment_url(comment.character,
-                            comment, ),
-            method: :delete%>
-    </li>
-    <% end %>
-  </ul>
-
-
-
-</article>
+</li>

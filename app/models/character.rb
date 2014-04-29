@@ -38,6 +38,7 @@ class Character < ActiveRecord::Base
 
   has_many(
   :duplicate_forks, inverse_of: :from_character,
+  counter_cache: :duplicate_forks_count,
   dependent: :destroy,
   class_name: "Fork",
   foreign_key: :from_character_id,
