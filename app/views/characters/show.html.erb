@@ -8,7 +8,7 @@
       <%= @character.name %>
     </a>
   </h1>
-  <small><%= @character.updated_at %></small>
+  <small>Updated <%=time_ago_in_words(@character.updated_at) %> ago</small>
   <div class="social-stats">
     <ul>
       <li>settings</li>

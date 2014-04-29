@@ -8,10 +8,4 @@ module ApplicationHelper
 
 
 
-
-
-
-
-
-
 end

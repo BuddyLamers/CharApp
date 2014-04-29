@@ -47,7 +47,7 @@
         </a>
       </p>
 
-      <small>last active <%= char.updated_at %></small>
+      <small>last active <%=time_ago_in_words(char.updated_at) %> ago</small>
 
       <% if char.is_fork_duplicate? %>
       <small>Forked from

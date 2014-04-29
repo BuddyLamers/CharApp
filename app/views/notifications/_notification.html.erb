@@ -2,7 +2,7 @@
   <% unless notification.is_read? %>
     <strong>New</strong>
   <% end %>
-  <small><%= notification.created_at %></small>
+  <small><%=time_ago_in_words(notification.created_at) %> ago</small>
   <a href="<%= notification_url(notification) %>"><%= notification.text %></a>
   <button>ADD --delete</button>
 </li>
