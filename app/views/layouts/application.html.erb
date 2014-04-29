@@ -9,52 +9,63 @@
 </head>
 <body>
 
-  <section class="topbar">
+  <section class="navbar">
 
-  <% if signed_in? %>
-  <ul class="topbar-list">
-    <li>Signed in as:
-          <%= link_to "#{current_user.username}", user_url(current_user) %>
-    </li>
-    <li><%= button_to "Sign Out", session_url, :method => :delete %></li>
-    <li>
-        <%= link_to "All Users", users_url %>
-    </li>
-    <li>
-      <a href="<%= notifications_url %>">Notifications</a>
+    <% if signed_in? %>
+    <ul class="navbar-info">
+      <li>Signed in as:
+            <%= link_to "#{current_user.username}", user_url(current_user) %>
+      </li>
+      <li><%= button_to "Sign Out", session_url, :method => :delete %></li>
+      <li>
+          <%= link_to "All Users", users_url %>
+      </li>
+    </ul>
 
-      <% unless current_user.notifications.empty? %>
-        <strong><%= current_user.notifications.unread.size %></strong>
-        <ul>
-          <%= render partial: "notifications/notification", collection: current_user.notifications.unread %>
-        </ul>
-      <% end %>
-    </li>
-    <li>
-        <%= link_to "Inbox", inbox_url %>
-    </li>
-    <li>
-        <%= link_to "Sentbox", sentbox_url %>
-    </li>
-    <li>
-        <%= link_to "New Message", new_message_url %>
-    </li>
-  </ul>
-  <% else %>
-  <p class='not-signed-in'>
-    <%= link_to "Sign In", new_session_url %> or
-    <%= link_to "Sign up", new_user_url %>
-  </p>
-  <% end %>
+
+
+    <ul class="navbar-social">
+      <li>
+        <a href="<%= notifications_url %>">Notifications</a>
+
+        <% unless current_user.notifications.empty? %>
+          <strong><%= current_user.notifications.unread.size %></strong>
+          <ul>
+            <%= render partial: "notifications/notification", collection:     current_user.notifications.unread %>
+          </ul>
+        <% end %>
+      </li>
+      <li>
+          <%= link_to "Inbox", inbox_url %>
+      </li>
+      <li>
+          <%= link_to "Sentbox", sentbox_url %>
+      </li>
+      <li>
+          <%= link_to "New Message", new_message_url %>
+      </li>
+    </ul>
+
+
+
+    <% else %>
+    <ul class='navbar-info'>
+      <li><%= link_to "Sign In", new_session_url %></li>
+      <li><%= link_to "Sign up", new_user_url %></li>
+    </ul>
+    <% end %>
+
   </section>
 
   <% if flash[:errors] %>
-    <h3 class='errors'>Please fix the following errors:</h3>
+  <div class='errors'>
+    <h3>Please fix the following errors:</h3>
     <ul class='error-list'>
       <% flash[:errors].each do |error| %>
       <li><%= error %></li>
       <% end %>
     </ul>
+  </div>
   <% end %>
 
 

@@ -1,25 +1,26 @@
-
+<header>
 <% if @user != current_user %>
 <h1 class ="header-text"><%="#{@user.username}'s characters"%></h1>
 <% else %>
 <h1 class ="header-text"><%="Your characters"%></h1>
 <% end %>
+</header>
 
 <section class="sidebar">
   <ul class="display-sidebox">
    <!-- again use counter caches -->
    <li>All Characters
-     <i class= "characters-count">
+     <i class="count">
        <%= @user.characters_count %>
      </i>
    </li>
    <li>Forked
-     <i class= "forked-characters-count">
+     <i class="count">
        <%= @user.forked_characters.count %>
      </i>
    </li>
    <li>Starred
-     <i class= "starred-characters-count">
+     <i class="count">
        <%= @user.starred_characters.count %>
      </i>
    </li>
@@ -31,13 +32,13 @@
   </ul>
 </section>
 
-<main class='main-list'>
+<main class='main-content'>
   <% if !@user.characters.nil? %>
-  <ul class="list-display">
+  <ul class="main-content-list">
     <% @user.characters.each do |char| %>
 
     <li>
-      <p>
+      <div class= "item-header-info">
         <a href="<%= user_url(@user) %>">
         <%= @user.username %>
         </a>
@@ -45,54 +46,59 @@
         <a href="<%=character_url(char) %>">
           <%= char.name %>
         </a>
-      </p>
 
-      <small>last active <%=time_ago_in_words(char.updated_at) %> ago</small>
 
-      <% if char.is_fork_duplicate? %>
-      <small>Forked from
+        <small>Last active <%=time_ago_in_words(char.updated_at) %> ago</small>
 
-        <a href='<%= user_url(char.original_creator) %>'>
-        <%= char.original_creator.username %>
-        </a>
-      </small>
-      <% end %>
+        <% if char.is_fork_duplicate? %>
+        <small>Forked from
 
-      <i>
-        <%= "#{char.tagline}" %>
-      </i>
+          <a href='<%= user_url(char.original_creator) %>'>
+          <%= char.original_creator.username %>
+          </a>
+        </small>
+        <% end %>
 
-      <div class="preview">
+        <i>
+          <%= "#{char.tagline}" %>
+        </i>
+      </div>
+
+      <div class="item-header-social">
+        <ul>
+         <li>Details
+           <i class="count">
+             <%= char.details_count %>
+           </i>
+         </li>
+         <li>Forks
+           <i class="count">
+             <%= char.duplicate_forks_count %>
+           </i>
+          </li>
+          <li>Comments
+            <i class="count">
+                <%= char.comments_count %>
+            </i>
+          </li>
+          <li>Stars
+            <i class="count">
+              <%= char.stars_count %>
+            </i>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <div class="item-body-text">
         <% if !char.details.empty? %>
         <% detail = char.details.first.body[0..200] %>
         <%= detail %> <%= "..." if detail.length > 200 %>
         <% end %>
       </div>
 
-      <div class="social-stats">
-        <ul>
-         <li>Details
-           <i class= "details-count">
-             <%= char.details_count %>
-           </i>
-         </li>
-         <li>Forks
-           <i class= "forks-count">
-             <%= char.duplicate_forks_count %>
-           </i>
-          </li>
-          <li>Comments
-            <i class= "comments-count">
-                <%= char.comments_count %>
-            </i>
-          </li>
-          <li>stars
-            <i class= "stars-count">
-              <%= char.stars_count %>
-            </i>
-          </li>
-        </ul>
-      </div>
+
     </li>
     <% end %>
   </ul>
