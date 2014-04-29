@@ -4,7 +4,9 @@ class Comment < ActiveRecord::Base
 
   validates :author, :character, presence: true
 
+  has_many :notifications, as: :notifiable, inverse_of: :notifiable, dependent: :destroy
 
+  after_commit :set_notification, on: [:create]
 
   belongs_to(
   :author, :inverse_of => :comments,
@@ -20,5 +22,11 @@ class Comment < ActiveRecord::Base
   foreign_key: :character_id,
   primary_key: :id
   )
+
+  def set_notification
+    notification = self.notifications.unread.event(:new_comment_on_character).new
+    notification.user = self.author
+    notification.save
+  end
 
 end

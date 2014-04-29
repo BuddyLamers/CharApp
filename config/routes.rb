@@ -17,6 +17,6 @@ CharApp::Application.routes.draw do
   get '/inbox', to: 'messages#inbox'
   get '/sentbox', to: 'messages#sentbox'
 
-
+  resources :notifications, only: [:index, :show]
 
 end

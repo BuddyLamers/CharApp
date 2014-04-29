@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428200116) do
+ActiveRecord::Schema.define(version: 20140428234635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,20 @@ ActiveRecord::Schema.define(version: 20140428200116) do
   add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
   add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
 
+  create_table "notifications", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.integer  "event_id"
+    t.boolean  "is_read"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["notifiable_id"], name: "index_notifications_on_notifiable_id", using: :btree
+  add_index "notifications", ["notifiable_type"], name: "index_notifications_on_notifiable_type", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
   create_table "stars", force: true do |t|
     t.integer  "user_id"
     t.integer  "character_id"
@@ -99,6 +113,7 @@ ActiveRecord::Schema.define(version: 20140428200116) do
     t.integer  "stars_count"
     t.integer  "received_messages_count"
     t.integer  "sent_messages_count"
+    t.integer  "notifications_count"
   end
 
   add_index "users", ["password_digest"], name: "index_users_on_password_digest", using: :btree

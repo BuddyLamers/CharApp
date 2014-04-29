@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   #validates :activated, :inclusion => { [true, false] }
   #validate that activated starts false? no...
 
+  has_many :notifications, inverse_of: :user, dependent: :destroy
+
   has_many(
   :characters, :inverse_of => :creator,
   dependent: :destroy,
@@ -57,6 +59,7 @@ class User < ActiveRecord::Base
   foreign_key: :receiver_id,
   primary_key: :id
   )
+
 
 
 

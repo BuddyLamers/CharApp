@@ -20,6 +20,16 @@
         <%= link_to "All Users", users_url %>
     </li>
     <li>
+      <a href="<%= notifications_url %>">Notifications</a>
+
+      <% unless current_user.notifications.empty? %>
+        <strong><%= current_user.notifications.unread.size %></strong>
+        <ul>
+          <%= render partial: "notifications/notification", collection: current_user.notifications.unread %>
+        </ul>
+      <% end %>
+    </li>
+    <li>
         <%= link_to "Inbox", inbox_url %>
     </li>
     <li>
