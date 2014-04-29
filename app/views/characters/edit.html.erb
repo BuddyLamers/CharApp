@@ -1,6 +1,6 @@
 <main class='new-character-form'>
 
-<form action="<%= user_character_url(current_user, @character) %>"
+<form action="<%= character_url(@character) %>"
   method="post">
   <input type='hidden' name='_method' value='PATCH'></input>
   <%= auth_token %>

@@ -7,8 +7,7 @@ class StarsController < ApplicationController
                       character_id: params[:character_id])
       star.save!
 
-      redirect_to user_character_url(params[:user_id],
-                                     params[:character_id])
+      redirect_to character_url(params[:character_id])
   end
 
 end

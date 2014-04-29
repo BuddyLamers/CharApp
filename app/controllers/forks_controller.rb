@@ -24,7 +24,7 @@ class ForksController < ApplicationController
 
     fork.save!
 
-    redirect_to user_character_url(current_user, duplicate_character)
+    redirect_to character_url(duplicate_character)
   end
 
   private

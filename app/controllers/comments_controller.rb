@@ -6,10 +6,10 @@ class CommentsController < ApplicationController
     @comment.author = current_user
 
     if @comment.save
-      redirect_to user_character_url(@comment.author_id, @comment.character_id)
+      redirect_to character_url(@comment.character_id)
     else
       flash.now[:errors] = @comment.errors.full_messages
-      redirect_to user_character_url(@comment.author_id, @comment.character_id)
+      redirect_to character_url(@comment.character_id)
     end
   end
 
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    url = user_character_url(@comment.author_id, @comment.character_id)
+    url = character_url(@comment.character_id)
     @comment.destroy!
     redirect_to url
   end

@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
     @character.details.new(detail_params)
     #fails if a character is saved with no details (fork)
     if @character.save
-      redirect_to user_character_url(current_user, @character)
+      redirect_to character_url(@character)
     else
       flash.now[:errors] = @character.errors.full_messages
       render :new
@@ -51,7 +51,7 @@ class CharactersController < ApplicationController
       flash.now[:errors] = ["One or more fields were invalid"]
       render :edit
     else
-      redirect_to user_character_url(current_user, @character)
+      redirect_to character_url(@character)
     end
   end
 

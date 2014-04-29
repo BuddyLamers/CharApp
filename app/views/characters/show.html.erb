@@ -4,7 +4,7 @@
     <%= @character.creator.username %>
     </a>
       /
-    <a href="<%= user_character_url(@character.creator,@character) %>">
+    <a href="<%= character_url(@character) %>">
       <%= @character.name %>
     </a>
   </h1>
@@ -15,12 +15,12 @@
       <% if @character.creator == current_user %>
       <li>
       <%= button_to "Edit",
-            edit_user_character_url(@character.creator, @character),
+            edit_character_url(@character),
             method: :get %>
       </li>
       <li>
       <%= button_to "Delete",
-            user_character_url(@character.creator, @character),
+            character_url(@character),
             method: :delete %>
             <!-- confirmation message with JS -->
       </li>
@@ -29,7 +29,7 @@
 
         <% if !current_user.has_already_forked_character?(@character) %>
         <%= button_to "Fork",
-        user_character_forks_url(@character.creator, @character),
+        character_forks_url(@character),
         method: :post
          %>
          <% else %>
@@ -41,7 +41,7 @@
       <li>
       <% if !current_user.has_already_starred_character?(@character) %>
               <%= button_to "Star",
-              user_character_stars_url(@character.creator, @character),
+              character_stars_url(@character),
               method: :post
                %>
                <% else %>

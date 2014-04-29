@@ -1,7 +1,6 @@
 <section class='comment-form'>
 
-<form action="<%= user_character_comments_url(
-                    @character.creator, @character) %>"
+<form action="<%= character_comments_url(@character) %>"
   method="post">
   <%= auth_token %>
 

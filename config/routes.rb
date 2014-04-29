@@ -6,11 +6,12 @@ CharApp::Application.routes.draw do
 
   get '/activate_users', to: 'users#activate'
   resources :users, only: [:new, :create, :show, :index] {
-    resources :characters, only: [:new, :create, :destroy, :edit, :update, :show]{
-      resources :comments, only: [:create, :destroy]
-      resources :forks, only: [:create]
-      resources :stars, only: [:create]
-    }
+
+  }
+  resources :characters, only: [:new, :create, :destroy, :edit, :update, :show]{
+    resources :comments, only: [:create, :destroy]
+    resources :forks, only: [:create]
+    resources :stars, only: [:create]
   }
   #unnest characters
   #comment destroy
