@@ -2,25 +2,28 @@
 
 
 <!-- use tables here -->
-<section class="messages">
+<table class="messages">
   <% @unread_messages.each do |message| %>
   <a href="<%= message_url(message) %>">
-    <ul class="unread message-item">
-      <li><%= message.sender.username %></li>
-      <li><%= message.title %></li>
-      <li><%= message.body %></li>
-    </ul>
+    <tr class="unread message-item">
+      <td><%= message.sender.username %></td>
+      <td><%= message.title %></td>
+      <td><%= message.body[0..99] %></td>
+    </tr>
   </a>
   <% end %>
 
+
   <% @read_messages.each do |message| %>
   <a href="<%= message_url(message) %>">
-    <ul class="unread message-item">
-      <li><%= message.sender.username %></li>
-      <li><%= message.title %></li>
-      <li><%= message.body %></li>
-    </ul>
+    <tr class="unread message-item">
+      <td><%= message.sender.username %></td>
+      <td><%= message.title %></td>
+      <td><%= message.body[0..99] %></td>
+    </tr>
   </a>
   <% end %>
-</section>
+
+
+</table>
 

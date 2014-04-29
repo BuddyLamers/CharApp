@@ -1,13 +1,15 @@
 <h1>Sentbox</h1>
 
-<section class="messages">
+<table class="messages">
   <% @sent_messages.each do |message| %>
-  <a href="<%= message_url(message) %>">
-    <ul class="unread message-item">
-      <li><%= message.receiver.username %></li>
-      <li><%= message.title %></li>
-      <li><%= message.body %></li>
-    </ul>
-  </a>
+
+    <tr class="unread message-item">
+      <a href="<%= message_url(message) %>">Link here for now
+      <td><%= message.receiver.username %></td>
+      <td><%= message.title %></td>
+      <td><%= message.body[0..99] %></td>
+      </a>
+    </tr>
+
   <% end %>
-</section>
+</table>

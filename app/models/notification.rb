@@ -11,12 +11,20 @@ class Notification < ActiveRecord::Base
 
   EVENT_IDS = EVENTS.invert
 
-  belongs_to :user, inverse_of: :notifications, counter_cache: true
-  belongs_to :notifiable, inverse_of: :notifications, polymorphic: true, counter_cache: true
-
   validates :event_id, inclusion: { in: EVENTS.keys }
   validates :is_read, inclusion: { in: [true, false] }
   validates :notifiable, :user, presence: true
+
+  belongs_to(
+  :user,
+  inverse_of: :notifications#,
+  # counter_cache: true
+  )
+
+  belongs_to(:notifiable,
+  inverse_of: :notifications,
+  polymorphic: true
+  )
 
   scope :read, -> { where(is_read: true) }
   scope :unread, -> { where(is_read: false) }
@@ -30,7 +38,7 @@ class Notification < ActiveRecord::Base
     case self.event_name
     when :new_comment_on_character
       comment = self.notifiable
-      user_character_url(comment.character_id)
+      user_character_url(comment.character.owner.id, comment.character_id)
     when :new_message
       message = self.notifiable
       message_url(message.id)
@@ -47,7 +55,7 @@ class Notification < ActiveRecord::Base
     case self.event_name
     when :new_comment_on_character
       comment = self.notifiable
-      comment_user = comment.user
+      comment_user = comment.author
       #possibly author
       character = comment.character
 
@@ -56,7 +64,7 @@ class Notification < ActiveRecord::Base
   end
 
 
-  #not sure what this part does exactly
+
   def default_url_options
     options = {}
     options[:host] = Rails.env.production? ? "appacademy.io" : "localhost:3000"

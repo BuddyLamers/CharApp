@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
 
   has_many :notifications, as: :notifiable, inverse_of: :notifiable, dependent: :destroy
 
-  after_commit :set_notification, on: [:create]
+  after_create :set_notification
 
   belongs_to(
   :author, :inverse_of => :comments,
@@ -24,9 +24,10 @@ class Comment < ActiveRecord::Base
   )
 
   def set_notification
+
     notification = self.notifications.unread.event(:new_comment_on_character).new
-    notification.user = self.author
-    notification.save
+    notification.user = self.character.creator
+    notification.save!
   end
 
 end
