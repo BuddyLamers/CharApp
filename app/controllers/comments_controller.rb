@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comment_params)
+    user = User.find(comment_params[:author_id])
+    @comment = user.comments.new(comment_params)
+    @comment.author = current_user
 
     if @comment.save
       redirect_to user_character_url(@comment.author_id, @comment.character_id)
