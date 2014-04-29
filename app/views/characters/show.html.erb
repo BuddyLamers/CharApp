@@ -9,7 +9,7 @@
     </a>
   </h1>
   <small>Updated <%=time_ago_in_words(@character.updated_at) %> ago</small>
-  <div class="social-stats">
+  <div class="header-social">
     <ul>
       <li>settings</li>
       <% if @character.creator == current_user %>
@@ -62,7 +62,7 @@
 
   <ul class="display-sidebox">
         <li>Character Details
-          <i class= "details-count">
+          <i class="count">
             <%= @character.details_count %>
           </i>
         </li>
