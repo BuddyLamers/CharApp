@@ -12,6 +12,8 @@ CharApp::Application.routes.draw do
       resources :stars, only: [:create]
     }
   }
+  #unnest characters
+  #comment destroy
 
   resources :messages, only: [:new, :create, :show]
   get '/inbox', to: 'messages#inbox'

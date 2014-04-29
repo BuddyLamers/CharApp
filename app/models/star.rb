@@ -2,7 +2,7 @@ class Star < ActiveRecord::Base
 
   validates :user, :character, presence: true
 
-  before_create :set_notification
+  after_create :set_notification
 
     belongs_to(
     :user,

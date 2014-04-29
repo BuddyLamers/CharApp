@@ -45,10 +45,11 @@ class Notification < ActiveRecord::Base
       #optionally inbox
     when :new_fork_of_character
       fork = self.notifiable
-      character_url(fork.to_character_id)
+      user_character_url(fork.to_character.creator, fork.to_character_id)
     when :new_star_of_character
       star = self.notifiable
       user_url(star.user)
+      #go to user's starred page
     end
   end
 
@@ -65,9 +66,9 @@ class Notification < ActiveRecord::Base
       "#{message_sender.username} sent you a message!"
     when :new_fork_of_character
       fork = self.notifiable
-      fork_user = fork.user
-      character = fork.character
-      "#{fork_user.username} starred your character #{character.name}"
+      fork_user = fork.to_character.creator
+      character = fork.from_character
+      "#{fork_user.username} forked your character #{character.name}"
     when :new_star_of_character
       star = self.notifiable
       star_user = star.user
