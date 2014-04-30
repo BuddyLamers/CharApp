@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
     source: :character)
 
     #method is used for for forked characters
+    #and private characters
 
 
 
@@ -88,8 +89,12 @@ class User < ActiveRecord::Base
         self.characters.each do |char|
           forked_chars << char if char.is_fork_duplicate?
         end
-        return forked_chars
-    end
+    return forked_chars
+  end
+
+  def private_characters
+    self.characters.where('private = true')
+  end
 
   def has_already_forked_character?(character)
     return false if forked_characters.empty?
@@ -109,7 +114,10 @@ class User < ActiveRecord::Base
         return true
       end
       false
-    end
+  end
+
+
+
 
   def reset_session_token!
     self.token = User.generate_token
