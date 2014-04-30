@@ -13,27 +13,19 @@
 <div class="content">
 <section class="sidebar">
   <ul class="sidebar-box">
-   <!-- again use counter caches -->
-   <li>All Characters
-     <i class="count">
-       <%= @user.characters_count %>
-     </i>
-   </li>
-   <li>Forked
-     <i class="count">
-       <%= @user.forked_characters.count %>
-     </i>
-   </li>
-   <li>Starred
-     <i class="count">
-       <%= @user.starred_characters.count %>
-     </i>
-   </li>
+     <%= title_link_count_li(
+   "All Characters", '#', @user.characters_count) %>
+     <%= title_link_count_li(
+   "Forked", '#', @user.forked_characters.count) %>
+     <%= title_link_count_li(
+   "Starred", '#', @user.starred_characters.count) %>
   </ul>
 
   <ul class="sidebar-box">
-    <li>Public</li>
-    <li>Private</li>
+      <%= title_link_count_li(
+    "Public", '#', @user.public_characters.count) %>
+      <%= title_link_count_li(
+    "Private", '#', @user.private_characters.count) %>
   </ul>
 </section>
 
@@ -80,23 +72,14 @@
 
 
           <ul class="social">
-           <li>Details
-             <i class="count">
-               <%= char.details_count %>
-             </i>
-           </li>
-             <%= title_link_count_html(
+             <%= title_link_count_li(
+           "Details", '#', char.details_count) %>
+             <%= title_link_count_li(
            "Forks", '#', char.duplicate_forks.count) %>
-            <li>Comments
-              <i class="count">
-                  <%= char.comments_count %>
-              </i>
-            </li>
-            <li>Stars
-              <i class="count">
-                <%= char.stars_count %>
-              </i>
-            </li>
+             <%= title_link_count_li(
+           "Comments", '#', char.comments_count) %>
+              <%= title_link_count_li(
+           "Stars", '#', char.stars_count) %>
           </ul>
 
       </header>

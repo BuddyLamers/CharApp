@@ -12,12 +12,19 @@ module ApplicationHelper
      </i>".html_safe
   end
 
-  def title_link_count_html(title, link, count)
-    "<li>
-      <a href='#{link}'>
-      #{title} <i class='count'>#{count}</i>
-      </a>
-    </li>".html_safe
+  def title_link_count_li(title, link, count)
+    if count
+      "<li>
+        <a href='#{link}'>
+        #{title} <i class='count'>#{count}</i>
+        </a>
+      </li>".html_safe
+    else
+      "<li>
+        <a href='#{link}'>
+        #{title} <i class='count'>#{0}</i>
+        </a>
+      </li>".html_safe
+    end
   end
-
 end

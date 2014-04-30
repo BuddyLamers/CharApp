@@ -74,11 +74,9 @@
   <i class='tagline'><%= @character.tagline %></i>
 
   <ul class="display-sidebox">
-        <li>Character Details
-          <i class="count">
-            <%= @character.details_count %>
-          </i>
-        </li>
+          <%= title_link_count_li(
+        "Character Details", '#', @character.details_count) %>
+
         <li>Revisions --not implemented</li>
   </ul>
 </section>

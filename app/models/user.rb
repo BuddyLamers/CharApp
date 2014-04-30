@@ -96,6 +96,10 @@ class User < ActiveRecord::Base
     self.characters.where('private = true')
   end
 
+  def public_characters
+    self.characters.where('private = false')
+  end
+
   def has_already_forked_character?(character)
     return false if forked_characters.empty?
 
