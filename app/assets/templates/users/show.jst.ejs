@@ -1,0 +1,118 @@
+<header class="page-header">
+<% if @user != current_user %>
+<h1 class="title-text">
+  <a href="<%= user_url(@user)%>">
+    <%= @user.username %>'s
+  </a> Characters
+</h1>
+<% else %>
+<h1 class="title-text"><%="Your characters"%></h1>
+<% end %>
+</header>
+
+<div class="content">
+<section class="sidebar">
+  <ul class="sidebar-box">
+   <!-- again use counter caches -->
+   <li>All Characters
+     <i class="count">
+       <%= @user.characters_count %>
+     </i>
+   </li>
+   <li>Forked
+     <i class="count">
+       <%= @user.forked_characters.count %>
+     </i>
+   </li>
+   <li>Starred
+     <i class="count">
+       <%= @user.starred_characters.count %>
+     </i>
+   </li>
+  </ul>
+
+  <ul class="sidebar-box">
+    <li>Public</li>
+    <li>Private</li>
+  </ul>
+</section>
+
+<main class='main-content'>
+  <% if !@user.characters.nil? %>
+  <ul class="main-content-list">
+    <% @user.characters.each do |char| %>
+
+    <li>
+      <header class="item-header group">
+          <ul class="info-vertical">
+            <li>
+              <a href="<%= user_url(@user) %>">
+              <%= @user.username %>
+              </a>
+                /
+              <a href="<%=character_url(char) %>">
+                <%= char.name %>
+              </a>
+            </li>
+
+            <li>
+              <small>Last active <%=time_ago_in_words(char.updated_at) %> ago
+              </small>
+
+              <% if char.is_fork_duplicate? %>
+              <small>Forked from
+
+                <a href='<%= user_url(char.original_creator) %>'>
+                <%= char.original_creator.username %>
+                </a>
+              </small>
+              <% end %>
+            </li>
+
+            <li>
+              <i>
+                <%= "#{char.tagline}" %>
+              </i>
+            </li>
+
+          </ul>
+
+
+
+          <ul class="social">
+           <li>Details
+             <i class="count">
+               <%= char.details_count %>
+             </i>
+           </li>
+             <%= title_link_count_html(
+           "Forks", '#', char.duplicate_forks.count) %>
+            <li>Comments
+              <i class="count">
+                  <%= char.comments_count %>
+              </i>
+            </li>
+            <li>Stars
+              <i class="count">
+                <%= char.stars_count %>
+              </i>
+            </li>
+          </ul>
+
+      </header>
+
+
+      <div class="item-body-text">
+        <% if !char.details.empty? %>
+        <% detail = char.details.first.body[0..200] %>
+        <%= detail %> <%= "..." if detail.length > 200 %>
+        <% end %>
+      </div>
+
+
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+</main>
+</div>

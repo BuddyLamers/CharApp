@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def start_backbone
+    render :start_backbone
+  end
+
   def new
     @user = User.new
     render :new
@@ -29,6 +33,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #@characters = @user.characters
     render :show
+    #how to get into backbone?
   end
 
   def activate
