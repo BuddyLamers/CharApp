@@ -1,5 +1,14 @@
 <h1> IN BACKBONE NOW</h1>
-<div id="content"></div>
+<div class="content">
+  <section class="sidebar" id="sidebar"></section>
+  <section class="main-content" id="main-content"></section>
+</div>
+
+<!-- call jbuilder here -->
+
 <script type="text/javascript" charset="utf-8">
-  $(CharApp.initialize);
+  $(CharApp.initialize({
+    shownUser: <%= @user %>
+    characters: <%= @characters %>,
+  }));
 </script>

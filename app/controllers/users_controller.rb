@@ -28,12 +28,31 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+
+  # def show #OLD RAILS SHOW
+#     @user = User.find(params[:id])
+#     #@characters = @user.characters
+#     render :show
+#     #how to get into backbone?
+#   end
+
+
+  def show #BACKBONE SHOW
+
+    #includes only works for associations
+    # @user = User.includes(:starred_characters,
+#                            :forked_characters,
+#                            :public_characters,
+#                            :private_characters
+#                            ).find(params[:id])
 
     @user = User.find(params[:id])
-    #@characters = @user.characters
-    render :show
-    #how to get into backbone?
+    @characters = @user.characters
+ #    @starred_characters = @user.starred_characters
+ #    @forked_characters = @user.forked_characters
+ #    @public_characters = @user.public_characters
+ #    @private_characters = @user.private_characters
+    render :start_backbone
   end
 
   def activate

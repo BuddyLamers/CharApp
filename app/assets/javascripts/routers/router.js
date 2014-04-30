@@ -1,6 +1,6 @@
 CharApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
-    this.users = options.users,
+    this.characters = options.characters,
     this.$rootEl = options.$rootEl;
   },
 
@@ -8,7 +8,15 @@ CharApp.Routers.Router = Backbone.Router.extend({
     "": "index",
     "users": "usersIndex",
     "users/:id": "userShow",
+    "characters": "charactersIndex"
 
+  },
+
+  // pass variable collections?
+  charactersIndex: function() {
+    var charactersIndexView = CharApp.Views.CharactersIndex({
+      collection: this.characters
+    })
   },
 
 
@@ -24,7 +32,7 @@ CharApp.Routers.Router = Backbone.Router.extend({
   },
 
   usersIndex: function(id) {
-    var indexView = new CharApp.Views.usersIndex({
+    var indexView = new CharApp.Views.UsersIndex({
       collection: this.users,
     })
     this.swapView(indexView)

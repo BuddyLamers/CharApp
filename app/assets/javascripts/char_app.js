@@ -4,22 +4,24 @@ window.CharApp = {
   Views: {},
   Routers: {},
   initialize: function() {
+    // console.log(characters)
+//     console.log(user)
     var $rootEl = $('#main-content');
     var $sidebar = $('#sidebar');
-    CharApp.Users = new CharApp.Collections.Users();
-
+    CharApp.characters = new CharApp.Collections.Characters();
+    CharApp.user = new CharApp.Models.User();
     var sidebarView = new CharApp.Views.Sidebar({
-      forkedCharacters:
-      starredCharacters: 
+      model: user,
+      collection: characters
     });
     $sidebar.html(sidebarView.render().$el)
 
 
-    CharApp.Users.fetch({
+    CharApp.user.fetch({
       success: function {
         new CharApp.Routers.Router({
           $rootEl: $rootEl,
-          users: CharApp.users
+          user: CharApp.user
         })
         Backbone.history.start();
       },
