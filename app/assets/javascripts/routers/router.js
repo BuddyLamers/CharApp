@@ -1,23 +1,37 @@
 CharApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
+    this.users = options.users,
     this.characters = options.characters,
+    this.starredCharacters = options.starredCharacters,
     this.$rootEl = options.$rootEl;
   },
 
   routes: {
-    "": "index",
+    "": "charactersIndex",
+    "forked":"charactersIndexForked",
+    "starred":"charactersIndexStarred",
+    "public":"charactersIndexPublic",
+    "private":"charactersIndexPrivate",
     "users": "usersIndex",
-    "users/:id": "userShow",
-    "characters": "charactersIndex"
-
+    "users/:id": "userShow"
   },
 
   // pass variable collections?
   charactersIndex: function() {
-    var charactersIndexView = CharApp.Views.CharactersIndex({
+    var charactersIndexView = new CharApp.Views.CharactersIndex({
       collection: this.characters
     })
+    this._swapView(charactersIndexView)
   },
+// there should be some way to do this by passing a string into the function?
+  charactersIndexPublic: function() {
+    var charactersIndexView = new CharApp.Views.CharactersIndex({
+      collection: this.characters.where({is_private: false})
+    })
+    this._swapView(charactersIndexView)
+  },
+
+
 
 
   userShow: function(id) {
@@ -28,7 +42,6 @@ CharApp.Routers.Router = Backbone.Router.extend({
       });
       that._swapView(formView)
     });
-
   },
 
   usersIndex: function(id) {
@@ -36,7 +49,7 @@ CharApp.Routers.Router = Backbone.Router.extend({
       collection: this.users,
     })
     this.swapView(indexView)
-  }
+  },
 
 
 
@@ -60,7 +73,7 @@ CharApp.Routers.Router = Backbone.Router.extend({
   },
 
   _swapView: function (view) {
-    this.currentView || this.currentView.remove();
+    this.currentView && this.currentView.remove();
     this.currentView = view
     this.$rootEl.html(view.render().$el);
   },

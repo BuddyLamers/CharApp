@@ -1,0 +1,87 @@
+<% if (characters) { %>
+<ul class="main-content-list">
+  <%= console.log(characters) %>
+
+<% characters.forEach(function(char) { %>
+<%= console.log(char.get('attributes')) %>
+  <li>
+    <header class="item-header group">
+        <ul class="info-vertical">
+          <li>
+            <a href="<%= char.get('creator_url') %>">
+            <%= char.get('creator_username') %>
+            </a>
+              /
+            <a href="#/characters <%= char.get('id') %>">
+              <%= char.get('name') %>
+            </a>
+          </li>
+
+          <li>
+            <small>Last active <%=char.get('updated_at') %> ago
+            </small>
+
+            <% if (char.get('is_fork_duplicate')) { %>
+            <small>Forked from
+
+              <a href='<%= char.get('original_creator_url') %>'>
+              <%= char.get('original_creator_username') %>
+              </a>
+            </small>
+            <% } %>
+          </li>
+
+          <li>
+            <i>
+              <%= char.get('tagline') %>
+            </i>
+          </li>
+
+        </ul>
+
+
+        <ul class="social">
+         <li>
+           <a href='#{link}'>
+             Details <i class='count'><%= char.get('details_count') %></i>
+           </a>
+         </li>
+
+         <li>
+           <a href='#{link}'>
+             Forks <i class='count'><%= char.get('duplicate_forks_count') %></i>
+           </a>
+         </li>
+
+         <li>
+           <a href='#{link}'>
+             Comments <i class='count'><%= char.get('comments_count') %></i>
+           </a>
+         </li>
+
+         <li>
+           <a href='#{link}'>
+             Stars <i class='count'><%= char.get('stars_count') %></i>
+           </a>
+         </li>
+        </ul>
+
+    </header>
+
+
+    <div class="item-body-text">
+          <%= char.get('details')[1].body.slice(0, 200) %> ...
+
+    </div>
+
+
+  </li>
+
+
+
+
+
+
+  <% }) %>
+</ul>
+<% } %>

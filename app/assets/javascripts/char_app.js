@@ -8,28 +8,27 @@ window.CharApp = {
 //     console.log(user)
     var $rootEl = $('#main-content');
     var $sidebar = $('#sidebar');
-    CharApp.characters = new CharApp.Collections.Characters();
-    CharApp.user = new CharApp.Models.User();
+
+    var json = $.parseJSON($('#bootstrapped-data-json').html())
+    CharApp.characters = new CharApp.Collections.Characters(json.characters);
+    CharApp.user = new CharApp.Models.User(json.user);
+    CharApp.current_user = new CharApp.Models.User(json.current_user);
+    CharApp.starredCharacters = new CharApp.Collections.Characters(json.starredCharacters);
+
+
     var sidebarView = new CharApp.Views.Sidebar({
-      model: user,
-      collection: characters
+      model: CharApp.user
     });
-    $sidebar.html(sidebarView.render().$el)
+    $sidebar.html(sidebarView.render().$el);
 
 
-    CharApp.user.fetch({
-      success: function {
-        new CharApp.Routers.Router({
-          $rootEl: $rootEl,
-          user: CharApp.user
-        })
-        Backbone.history.start();
-      },
-      error: function() {
-
-      }
-    });
-    alert('Hello from Backbone!');
+    // possibly need to pass lots of things here.
+    new CharApp.Routers.Router({
+     $rootEl: $rootEl,
+     characters: CharApp.characters,
+     starredCharacters: CharApp.starredCharacters
+    })
+    Backbone.history.start();
   }
 };
 

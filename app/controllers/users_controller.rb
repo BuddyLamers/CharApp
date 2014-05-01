@@ -48,6 +48,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     @characters = @user.characters
+    @starred_characters = @user.starred_characters
  #    @starred_characters = @user.starred_characters
  #    @forked_characters = @user.forked_characters
  #    @public_characters = @user.public_characters

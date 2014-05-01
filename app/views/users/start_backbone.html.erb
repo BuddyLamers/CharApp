@@ -4,11 +4,20 @@
   <section class="main-content" id="main-content"></section>
 </div>
 
-<!-- call jbuilder here -->
+
+
+<script type="application/json" id="bootstrapped-data-json">
+{ "user": <%= render(partial: "users/show.json",
+    locals: { user: @user }).html_safe %>,
+  "currentUser": <%= render(partial: "users/show.json",
+      locals: { user: current_user }).html_safe %>,
+  "characters": <%= render(partial: "characters/index.json",
+      locals: { characters: @characters }).html_safe %>,
+  "starredCharacters": <%= render(partial: "characters/index.json",
+      locals: { characters: @starred_characters }).html_safe %>
+    }
+</script>
 
 <script type="text/javascript" charset="utf-8">
-  $(CharApp.initialize({
-    shownUser: <%= @user %>
-    characters: <%= @characters %>,
-  }));
+  CharApp.initialize();
 </script>

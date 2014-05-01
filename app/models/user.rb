@@ -80,6 +80,10 @@ class User < ActiveRecord::Base
     SecureRandom::urlsafe_base64(16)
   end
 
+  def has_starred?(char)
+    self.starred_characters.include?(char)
+  end
+
   def unread_messages
     self.recieved_messages.where(already_read: false)
   end
