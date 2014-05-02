@@ -31,8 +31,26 @@ CharApp.Routers.Router = Backbone.Router.extend({
     this._swapView(charactersIndexView)
   },
 
+  charactersIndexPrivate: function() {
+    var charactersIndexView = new CharApp.Views.CharactersIndex({
+      collection: this.characters.where({is_private: true})
+    })
+    this._swapView(charactersIndexView)
+  },
 
+  charactersIndexStarred: function() {
+    var charactersIndexView = new CharApp.Views.CharactersIndex({
+      collection: this.starredCharacters
+    })
+    this._swapView(charactersIndexView)
+  },
 
+  charactersIndexForked: function() {
+    var charactersIndexView = new CharApp.Views.CharactersIndex({
+      collection: this.characters.where({is_fork_duplicate: true})
+    })
+    this._swapView(charactersIndexView)
+  },
 
   userShow: function(id) {
     var that = this;

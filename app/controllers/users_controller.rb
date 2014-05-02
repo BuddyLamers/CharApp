@@ -29,15 +29,15 @@ class UsersController < ApplicationController
   end
 
 
-  # def show #OLD RAILS SHOW
-#     @user = User.find(params[:id])
-#     #@characters = @user.characters
-#     render :show
-#     #how to get into backbone?
-#   end
+  def show #OLD RAILS SHOW
+    @user = User.find(params[:id])
+    #@characters = @user.characters
+    render :show
+    #how to get into backbone?
+  end
 
 
-  def show #BACKBONE SHOW
+  def showw #BACKBONE SHOW
 
     #includes only works for associations
     # @user = User.includes(:starred_characters,
