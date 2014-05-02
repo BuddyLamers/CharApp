@@ -1,26 +1,46 @@
-<main class='new-character-form'>
+<header class="page-header">
+  <h1 class="title-text">
+  Create a New Character:
+  </h1>
+  <i class="tagline">let your imagination run wild...</i>
+</header>
+
+<div class="content">
+<main class='main-content'>
+
 
 <form action="<%= characters_url %>"
   method="post">
   <%= auth_token %>
+<ul class="main-content-list">
+  <li>
+  <header class="item-header group">
+    <div class="info">
 
-  <label for="character-name">Name</label>
-  <input type="text" name="character[name]" id="character-name">
+    <label for="character-name">Name</label>
+    <input type="text" name="character[name]" id="character-name">
 
-  <label for="private">Private?</label>
-  <input type="checkbox" name="character[private]" value="true" id="private">
+    <label for="private">For your eyes only?</label>
+    <input type="checkbox" name="character[private]" value="true" id="private">
 
-
+</div>
+</header>
+<div class="item-body-text">
   <label for="character-tagline">Tagline (Short description)</label>
   <input type="text" name="character[tagline]" id="character-tagline">
-
+</div>
+</li>
   <% @detail_num = 1 %>
-    <%= render partial: "character_details/new" %>
 
-    Have a button to add a detail (needs JS?)
+    <%= render partial: "character_details/new" %>
+  </ul>
+
+  Button to Add a Detail (With Javascript)
+
 
 
   <p><input type="submit" value="Save Character"></p>
 </form>
 
 </main>
+</div>
