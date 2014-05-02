@@ -19,13 +19,17 @@
    "Forked", '#', @user.forked_characters.count) %>
      <%= title_link_count_li(
    "Starred", '#', @user.starred_characters.count) %>
-  </ul>
 
-  <ul class="sidebar-box">
+
+
       <%= title_link_count_li(
     "Public", '#', @user.public_characters.count) %>
       <%= title_link_count_li(
     "Private", '#', @user.private_characters.count) %>
+
+    <li>
+      <a href="<%= new_character_url %>">New Character</a>
+    </li>
   </ul>
 </section>
 

@@ -1,16 +1,38 @@
 
-<h2>Sign In Here!</h2>
+<div class="content">
+
+  <section class="page-header">
+   <h1 class="title-text">
+      Welcome Back:
+   </h1>
+    <p>Please Sign In with your username and password.</p>
+    <p>
+      New users, please <%= link_to "Sign Up", new_session_url %>
+    </p>
+
+  </section>
+
+  <section class="main-content">
 
 <form action="<%= session_url %>" method="post">
 <%= auth_token %>
-
-<label>Username
-  <input type="text" name="user[username]">
-</label>
-
-<label>Password
-  <input type="password" name="user[password]">
-</label>
-
-  <p><input type="submit" value="Sign In!"></p>
+        <ul class="info-vertical">
+          <li>
+            <label>Username
+              <input type="text" name="user[username]" >
+              </label>
+          </li>
+          <li>
+            <label>Password
+              <input type="password" name="user[password]">
+            </label>
+          </li>
+          <li>
+            <p><input type="submit" value="Sign In!"></p>
+          </li>
+        </ul>
 </form>
+
+
+  </section>
+</div>
