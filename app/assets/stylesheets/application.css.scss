@@ -146,17 +146,27 @@ input {
 
 .main-content-list {
 
+
 }
 
 .main-content-list > li {
  margin: auto;
+ border: 1px solid black;
+ margin-bottom: 20px;
 }
 
 .item-header {
   background: #00cc00;
+  padding: 3px;
 }
 
 .item-body-text {
+  padding: 3px;
+}
+
+.item-body-text > input {
+  width: 442px;
+  height: auto;
 
 }
 
@@ -194,7 +204,7 @@ input {
 }
 
 .comment {
-  width: 400px;
+  width: 450px;
 }
 
 .dropdown-item {

@@ -1,12 +1,9 @@
-<section class='comment-form'>
+<li class='comment'>
 
 <form action="<%= character_comments_url(@character) %>"
   method="post">
   <%= auth_token %>
-
-  <label for="comment-body">Write a Comment</label>
-  <input type="text" name="comment[body]" id="comment-text">
-
+  <header class="item-header group">
   <input type="hidden"
   name="comment[author_id]"
   value="<%= current_user.id %>">
@@ -15,7 +12,19 @@
   name="comment[character_id]"
   value="<%= @character.id %>">
 
-  <p><input type="submit" value="Add Comment"></p>
+<div class="info">
+  <label for="comment-body">Write a Comment</label>
+</div>
+</header>
+
+<div class="item-body-text">
+  <input type="text" name="comment[body]" id="comment-text">
+
+</div>
+
+<p><input type="submit" value="Add Comment"></p>
+
+
 </form>
 
-</section>
+</li>
