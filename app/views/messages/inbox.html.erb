@@ -1,37 +1,51 @@
-<h1>Inbox</h1>
+<div class="content">
+  <section class="page-header">
+    <h1 class="title-text">
+      This is your Inbox!
+    </h1>
+    <i>
+      people like you!
+    </i>
+  </section>
+
+  <section class="main-content">
+    <table class="main-content-table">
+      <% @unread_messages.each do |message| %>
+
+        <tr class="unread message-item">
+          <td><%= message.sender.username %></td>
+          <td>
+            <a href="<%= message_url(message) %>">
+              <%= message.title %>
+            </a>
+          </td>
+          <td><%= message.body[0..99] %></td>
+        </tr>
+
+      <% end %>
 
 
+      <% @read_messages.each do |message| %>
+      <a href="<%= message_url(message) %>">
+        <tr class="read message-item">
+          <td><%= message.sender.username %></td>
+          <td>
+            <a href="<%= message_url(message) %>">
+              <%= message.title %>
+            </a>
+          </td>
+          <td><%= message.body[0..99] %></td>
+        </tr>
+      </a>
+      <% end %>
+
+
+    </table>
+
+
+  </section>
+
+</div>
 <!-- use tables here -->
-<table class="messages">
-  <% @unread_messages.each do |message| %>
 
-    <tr class="unread message-item">
-      <td><%= message.sender.username %></td>
-      <td>
-        <a href="<%= message_url(message) %>">
-          <%= message.title %>
-        </a>
-      </td>
-      <td><%= message.body[0..99] %></td>
-    </tr>
-
-  <% end %>
-
-
-  <% @read_messages.each do |message| %>
-  <a href="<%= message_url(message) %>">
-    <tr class="read message-item">
-      <td><%= message.sender.username %></td>
-      <td>
-        <a href="<%= message_url(message) %>">
-          <%= message.title %>
-        </a>
-      </td>
-      <td><%= message.body[0..99] %></td>
-    </tr>
-  </a>
-  <% end %>
-
-
-</table>
 
