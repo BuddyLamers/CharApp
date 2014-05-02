@@ -5,11 +5,11 @@ User.create!([
   {username: "Adrian Cann", email: "davidpionke@gmail.com", password_digest: "$2a$10$oae9vF/MzaOA05ooGhUrvevyi.Qb2U07F2ng7T755LqndElbEDunm", token: "WJqtL-Wxi2VR6e7sgYXsqA", activated: true, activation_token: "JR9SKBQrG2nOGn-oKHcYMA", characters_count: 1, stars_count: 3, received_messages_count: 2, sent_messages_count: nil, private: false}
 ])
 Character.create!([
-  {name: "Harry Potter", tagline: "A wizard boy and hero", private: false, user_id: 3, details_count: 2, comments_count: 2, duplicate_forks_count: nil, stars_count: 1},
-  {name: "Rebulba", tagline: "Sorceror of time and space", private: false, user_id: 2, details_count: 4, comments_count: 2, duplicate_forks_count: nil, stars_count: 2},
+  {name: "Harry Potter", tagline: "A wizard boy and hero", private: false, user_id: 2, details_count: 2, comments_count: 2, duplicate_forks_count: nil, stars_count: 1},
+  {name: "Rebulba", tagline: "Sorceror of time and space", private: false, user_id: 3, details_count: 4, comments_count: 2, duplicate_forks_count: nil, stars_count: 2},
   {name: "Sonic", tagline: "A blue hedgehog. Runs at supersonic speeds", private: false, user_id: 1, details_count: 2, comments_count: 2, duplicate_forks_count: nil, stars_count: 1},
   {name: "Heracles", tagline: "A Greek/Roman Hero", private: false, user_id: 1, details_count: 2, comments_count: 1, duplicate_forks_count: nil, stars_count: 2},
-  {name: "Ron Weasely", tagline: "A poor boy from a large wizard famliy", private: false, user_id: 3, details_count: 2, comments_count: 1, duplicate_forks_count: nil, stars_count: 2},
+  {name: "Ron Weasely", tagline: "A poor boy from a large wizard famliy", private: false, user_id: 2, details_count: 2, comments_count: 1, duplicate_forks_count: nil, stars_count: 2},
 ])
 CharacterDetail.create!([
   {character_id: 3, title: "Premise", body: 'Almost all games in the series feature a blue hedgehog named Sonic as the central player character and protagonist. The games detail Sonic and his allies attempt to save the world from various threats, primarily the evil genius Dr. Ivo "Eggman" Robotnik, the main antagonist of the series. Robotniks aim is to rule the planet; to achieve this, he usually attempts to destroy Sonic and to acquire the powerful Chaos Emeralds.'},
