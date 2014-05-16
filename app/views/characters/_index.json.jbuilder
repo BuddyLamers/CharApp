@@ -6,10 +6,12 @@
 json.array! characters do |character|
 
 
-  json.(character, :id, :name, :tagline, :created_at,
+  json.(character, :id, :name, :tagline,
         :updated_at, :details_count, :comments_count)
 
         json.url ("#/characters/" + character.id.to_s)
+
+  json.created_at = character.created_at
 
   json.duplicate_forks_count  character.duplicate_forks.count
   json.stars_count  character.stars_count

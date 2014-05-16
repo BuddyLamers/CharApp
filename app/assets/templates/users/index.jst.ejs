@@ -1,0 +1,12 @@
+<p>aaaaaaa</p>
+
+<ul>
+<%= users.for_each(function(user){ %>
+
+  <li>
+    <a href="users/<%=user.get('id')%>"><%= user.escape('username')  %></a>
+  </li>
+
+
+  <%= });  %>
+</ul>

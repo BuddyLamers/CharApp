@@ -2,26 +2,33 @@
    <!-- again use counter caches -->
 
   <li>
-    <a href='#{link}'>
-      All Characters <i class='count'><%= user.forked_characters_count %></i>
+    <a href=''>
+      All Characters <i class='count'><%= user.get('characters_count') %></i>
     </a>
   </li>
 
   <li>
-    <a href='#{link}'>
-      Forked <i class='count'><%= user.forked_characters_count %></i>
+    <a href='#forked'>
+      Forked <i class='count'><%= user.get('forked_characters_count') %></i>
     </a>
   </li>
 
   <li>
-    <a href='#{link}'>
-      Starred <i class='count'><%= user.forked_characters_count %></i>
+    <a href='#starred'>
+      Starred <i class='count'><%= user.get('starred_characters_count') %></i>
     </a>
   </li>
 
-  </ul>
+  <li>
+    <a href='#public'>
+      Public <i class='count'><%= user.get('public_characters_count') %></i>
+    </a>
+  </li>
 
-  <ul class="sidebar-box">
-    <li>Public</li>
-    <li>Private</li>
+  <li>
+    <a href='#private'>
+      Private <i class='count'><%= user.get('private_characters_count') %></i>
+    </a>
+  </li>
+
   </ul>
