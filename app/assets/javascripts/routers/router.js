@@ -1,8 +1,8 @@
 CharApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
-    this.users = options.users,
-    this.characters = options.characters,
-    this.starredCharacters = options.starredCharacters,
+    this.users = options.users;
+    this.characters = options.characters;
+    this.starredCharacters = options.starredCharacters;
     this.$rootEl = options.$rootEl;
   },
 
