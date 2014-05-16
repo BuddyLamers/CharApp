@@ -94,6 +94,6 @@ CharApp.Routers.Router = Backbone.Router.extend({
     this.currentView && this.currentView.remove();
     this.currentView = view
     this.$rootEl.html(view.render().$el);
-  },
+  }
 
 });
