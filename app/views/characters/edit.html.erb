@@ -1,4 +1,12 @@
-<main class='new-character-form'>
+<header class="page-header group">
+  <div class="title-text">Edit Character</div>
+    <a href="/characters/<%= @character.id %>">Go Back</a>
+</header>
+
+
+<body>
+<div class="content">
+<section class="main-content">
 
 <form action="<%= character_url(@character) %>"
   method="post">
@@ -15,18 +23,22 @@
 
   <input type='hidden' name="character[id]" value="<%= @character.id %>">
 
+
 <%if @details %>
+<ul class="main-content-list">
+
   <% @details.length.times do |i| %>
   <% @detail_num = i %>
     <%= render partial: "character_details/edit" %>
   <% end %>
+  Have a button to add a detail (needs JS?)
+    <p><input type="submit" value="Save Character"></p>
+  <ul>
 <% end %>
 
+</section>
 
-    Have a button to add a detail (needs JS?)
-
-
-  <p><input type="submit" value="Save Character"></p>
 </form>
 
-</main>
+</div>
+</body>

@@ -1,15 +1,22 @@
-<section class='edit-character-detail'>
-  <label for="detail-title">Detail Title</label>
-  <input type="text"
-  name="character_detail[<%= @detail_num %>][title]"
-  value="<%= @details[@detail_num].title %>" id="detail-title">
 
+<li class="detail">
+  <header class="item-header group">
+    <div class="info">
+      <label for="detail-title">Detail Title</label>
+      <input type="text"
+      name="character_detail[<%= @detail_num %>][title]"
+      value="<%= @details[@detail_num].title %>" id="detail-title">
+    </div>
+  </header>
+
+<div class="item-body-text">
   <label for="detail-body">Detail Body</label>
   <input type="text"
   name="character_detail[<%= @detail_num %>][body]"
   value="<%= @details[@detail_num].body %>" id="detail-body">
 
   NEED DELETE BUTTON HERE
+</div>
 
-</section>
 
+</li>
