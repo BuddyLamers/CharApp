@@ -7,13 +7,16 @@ class ForksController < ApplicationController
     duplicate_character = character_to_fork.dup
     duplicate_details = create_attributes_array(
                       character_to_fork.details.dup)
+    #break out into character method
+    duplicate_character.details_count = 0
+    duplicate_character.comments_count = 0
+    duplicate_character.stars_count = 0
 
     duplicate_character.user_id = current_user.id
     duplicate_character.details.new(duplicate_details)
     duplicate_character.id = nil
 
-    #this should possibly instead create a new character
-    #from the attributes of character_to_fork
+
 
     duplicate_character.save!
 

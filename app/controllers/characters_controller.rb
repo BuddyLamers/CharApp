@@ -59,7 +59,6 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.destroy!
     redirect_to user_url(current_user)
-    #need to dependent destroy the details.
   end
 
 

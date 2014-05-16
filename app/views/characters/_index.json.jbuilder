@@ -21,7 +21,7 @@ json.array! characters do |character|
   json.creator_url  user_url(character.creator)
 
   if character.is_fork_duplicate?
-    json.original_creator_username  charactor.original_creator.username
+    json.original_creator_username  character.original_creator.username
     json.original_creator_url user_url(character.original_creator)
   end
 
@@ -36,12 +36,6 @@ json.array! characters do |character|
     json.author_username comment.author.username
     json.author_url user_url(comment.author)
   end
-
-
-  # call jbuilder views from api controllers?
-  # should i be passing a url as a variable?
-  # how to call "character" for ALL characters as a collection.
-  # a little help bootstrapping that in (can't find guide)
 
 end
 # call jbuilder views from api controllers?
