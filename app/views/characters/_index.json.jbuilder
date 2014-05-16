@@ -7,11 +7,13 @@ json.array! characters do |character|
 
 
   json.(character, :id, :name, :tagline,
-        :updated_at, :details_count, :comments_count)
+         :details_count, :comments_count)
 
         json.url ("#/characters/" + character.id.to_s)
 
-  json.created_at = character.created_at
+#switch eventually to a jquery plugin
+  json.created_at  time_ago_in_words(character.created_at)
+  json.updated_at  time_ago_in_words(character.updated_at)
 
   json.duplicate_forks_count  character.duplicate_forks.count
   json.stars_count  character.stars_count

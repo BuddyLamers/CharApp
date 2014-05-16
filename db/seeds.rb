@@ -1,8 +1,8 @@
 
 User.create!([
-  {username: "Buddy", email: "buddylamers@gmail.com", password_digest: "$2a$10$T9s2lS5orxCJnJKygG2RDu/B0fS4eQitcuXVHUSQiMx5Ed85o8gNa", token: "d_8u7uNE56L4SCXX6gX0JQ", activated: true, activation_token: "zFlGMBKpEoPSBNMa7Lkrsw", characters_count: 2, stars_count: 2, received_messages_count: 1, sent_messages_count: 2, private: false},
-  {username: "JKRowling", email: "JKRowling@gmail.com", password_digest: "$2a$10$2jHTa4ENzof2tLAWN.h/LOyFpUPKwu/H4BfuM54odpsUVf5gYhcgm", token: "54GbL-EisDoyoQdINrlQfQ", activated: true, activation_token: "VeZ8th2_D2lVP6w904Ja5A", characters_count: 2, stars_count: 3, received_messages_count: 1, sent_messages_count: 2, private: false},
-  {username: "Adrian Cann", email: "davidpionke@gmail.com", password_digest: "$2a$10$oae9vF/MzaOA05ooGhUrvevyi.Qb2U07F2ng7T755LqndElbEDunm", token: "WJqtL-Wxi2VR6e7sgYXsqA", activated: true, activation_token: "JR9SKBQrG2nOGn-oKHcYMA", characters_count: 1, stars_count: 3, received_messages_count: 2, sent_messages_count: nil, private: false}
+  {username: "Buddy", email: "buddylamers@gmail.com", password_digest: "$2a$10$T9s2lS5orxCJnJKygG2RDu/B0fS4eQitcuXVHUSQiMx5Ed85o8gNa", token: "d_8u7uNE56L4SCXX6gX0JQ", activated: true, activation_token: "zFlGMBKpEoPSBNMa7Lkrsw", characters_count: 0, stars_count: 0, received_messages_count: 0, sent_messages_count: 0, private: false},
+  {username: "JKRowling", email: "JKRowling@gmail.com", password_digest: "$2a$10$2jHTa4ENzof2tLAWN.h/LOyFpUPKwu/H4BfuM54odpsUVf5gYhcgm", token: "54GbL-EisDoyoQdINrlQfQ", activated: true, activation_token: "VeZ8th2_D2lVP6w904Ja5A", characters_count: 0, stars_count: 0, received_messages_count: 0, sent_messages_count: 0, private: false},
+  {username: "Adrian Cann", email: "davidpionke@gmail.com", password_digest: "$2a$10$oae9vF/MzaOA05ooGhUrvevyi.Qb2U07F2ng7T755LqndElbEDunm", token: "WJqtL-Wxi2VR6e7sgYXsqA", activated: true, activation_token: "JR9SKBQrG2nOGn-oKHcYMA", characters_count: 0, stars_count: 0, received_messages_count: 0, sent_messages_count: nil, private: false}
 ])
 Character.create!([
   {name: "Harry Potter", tagline: "A wizard boy and hero", private: false, user_id: 2, details_count: 0, comments_count: 0, duplicate_forks_count: nil, stars_count: 0},
@@ -56,4 +56,3 @@ Star.create!([
 Notification.create!([
 
 ])
-
