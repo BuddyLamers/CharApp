@@ -10,6 +10,6 @@ CharApp.Views.Sidebar = Backbone.View.extend({
 
     this.$el.html(renderedContent)
     return this;
-  },
+  }
 
 });
