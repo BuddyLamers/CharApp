@@ -10,6 +10,25 @@
       New users, please <%= link_to "Sign Up", new_session_url %>
     </p>
 
+    <form action="<%= session_url %>" method="post">
+    <%= auth_token %>
+
+
+
+                  <input type="hidden" name="user[username]" value="Buddy">
+
+
+
+
+                  <input type="hidden" name="user[password]" value="buddy01">
+
+
+
+                <p><input type="submit" value="Demo the site!"></p>
+
+
+    </form>
+
   </section>
 
   <section class="main-content">
@@ -32,6 +51,7 @@
           </li>
         </ul>
 </form>
+
 
 
   </section>
