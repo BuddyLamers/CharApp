@@ -79,11 +79,11 @@
              <%= title_link_count_li(
            "Details", character_url(char), char.details_count) %>
              <%= title_link_count_li(
-           "Forks", '#', char.duplicate_forks.count) %>
+           "Forks", character_url(char, variable: "forks"), char.duplicate_forks.count) %>
              <%= title_link_count_li(
-           "Comments", '#', char.comments_count) %>
+           "Comments", character_url(char), char.comments_count) %>
               <%= title_link_count_li(
-           "Stars", '#', char.stars_count) %>
+           "Stars", character_url(char, variable: "stars"), char.stars_count) %>
           </ul>
 
       </header>

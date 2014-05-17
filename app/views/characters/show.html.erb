@@ -77,8 +77,12 @@
   <ul class="sidebar-box">
           <%= title_link_count_li(
         "Character Details", '#', @character.details_count) %>
+        <%= title_link_count_li(
+      "Forks", '#', @character.duplicate_forks_count) %>
+      <%= title_link_count_li(
+    "Stars", '#', @character.stars_count) %>
 
-        <li>Revisions --not implemented</li>
+        
   </ul>
 </section>
 
