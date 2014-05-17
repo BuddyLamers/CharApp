@@ -77,11 +77,11 @@
 
           <ul class="social">
              <%= title_link_count_li(
-           "Details", character_url(char), char.details_count) %>
+           "Details", character_url(char, variable: "details"), char.details_count) %>
              <%= title_link_count_li(
            "Forks", character_url(char, variable: "forks"), char.duplicate_forks.count) %>
              <%= title_link_count_li(
-           "Comments", character_url(char), char.comments_count) %>
+           "Comments", character_url(char, variable: "details"), char.comments_count) %>
               <%= title_link_count_li(
            "Stars", character_url(char, variable: "stars"), char.stars_count) %>
           </ul>

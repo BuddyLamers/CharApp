@@ -20,6 +20,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @variable = params[:variable]
     @character = Character.find(params[:id])
     @comments = @character.comments
     render :show

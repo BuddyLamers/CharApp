@@ -59,6 +59,12 @@ class Character < ActiveRecord::Base
   source: :from_character
   )
 
+  has_many(
+  :duplicate_characters,
+  through: :duplicate_forks,
+  source: :to_character
+  )
+
   def is_fork_duplicate?
     self.source_fork.nil? ? false : true
   end

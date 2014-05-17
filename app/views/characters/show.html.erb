@@ -10,6 +10,7 @@
         <a href="<%= character_url(@character) %>">
           <%= @character.name %>
         </a>
+
       </div>
     </li>
 
@@ -75,20 +76,24 @@
 
 
   <ul class="sidebar-box">
+    <li><%= @variable %></li>
           <%= title_link_count_li(
-        "Character Details", '#', @character.details_count) %>
+        "Character Details", character_url(@character, variable: "details"), @character.details_count) %>
         <%= title_link_count_li(
-      "Forks", '#', @character.duplicate_forks_count) %>
+      "Forks", character_url(@character, variable: "forks"), @character.duplicate_forks_count) %>
       <%= title_link_count_li(
-    "Stars", '#', @character.stars_count) %>
+    "Stars", character_url(@character, variable: "stars"), @character.stars_count) %>
 
-        
+
   </ul>
 </section>
 
 <!-- this section should be refactoreed to render partial
 detail _show -->
 <main class='main-content'>
+
+<% case @variable  %>
+<% when 'details'  %>
   <% if !@character.details.nil? %>
   <ul class="main-content-list">
     <%= render @character.details %>
@@ -106,11 +111,34 @@ detail _show -->
 
   </ul>
 
+<% when 'forks'  %>
+  <ul class="main-content-list">
+    <% if @character.duplicate_characters %>
+      <% @character.duplicate_characters.each do |char| %>
+      <!-- <li>
+        <ul class="info">
+          <li>
+            <a href="user_url(<%= char.creator%>)"><%= char.creator.username %></a>
+          </li>
+          <li>
+            <a href="character_url(<%= char)"><%= char.name %></a>
+          </li>
+        </ul>
+
+      </li> -->
+      <% end %>
+    <% end  %>
+
+  </ul>
+
+
+
+<% when 'stars'  %>
+
+<% end  %>
+
 </main>
 </div>
-
-
-
 
 
 
