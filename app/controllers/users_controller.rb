@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
 
-  def showw #OLD RAILS SHOW
+  def show #OLD RAILS SHOW
     @user = User.find(params[:id])
     #@characters = @user.characters
     render :show
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
 
-  def show #BACKBONE SHOW
+  def showw #BACKBONE SHOW
 
     #includes only works for associations
     # @user = User.includes(:starred_characters,

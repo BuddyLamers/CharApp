@@ -1,13 +1,20 @@
-<section class="message-show">
 
-  <ul class= "message-attribute-list">
+
+<section class="content">
+<header class="page-header group">
+  <div class="title-text">View Message </div>
+</header>
+
+<body>
+<div class="main-content">
+  <ul>
     <li>From: <%= @message.sender.username %></li>
     <li>To: <%= @message.receiver.username %></li>
     <li>Title: <%= @message.title %></li>
     <li>Body: <%= @message.body %></li>
+    <li> <%= link_to "reply", new_message_url(username: @message.sender.username) %> </li>
   </ul>
+</div>
+</body>
 
-</section>
-
-<%= link_to "reply", new_message_url(username: @message.sender.username) %>
-
+<section>

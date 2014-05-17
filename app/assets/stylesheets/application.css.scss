@@ -207,10 +207,6 @@ input {
 
 }
 
-.dropdown-list {
-
-}
-
 .name-wrap {
 
 }
@@ -224,11 +220,17 @@ input {
 }
 
 .dropdown-item {
+  background: white;
   position: absolute;
   display: none;
   font-size: 12px;
   width: 500px;
   left: -200px;
+}
+
+.dropdown-item > li {
+  padding: 3px;
+  border: 1px solid black;
 }
 
 .dropdown-list {
