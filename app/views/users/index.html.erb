@@ -1,6 +1,19 @@
+<section class="content">
+<header class="page-header group">
+  <div class="title-text">All Users</div>
+  <i>everyone...</i>
+</header>
 
-<% @users.each do |user| %>
-<div>
-  <%= link_to "#{user.username}", user_url(user) %>
+<body>
+<div class="main-content">
+  <ul>
+    <% @users.each do |user| %>
+    <li>
+      <%= link_to "#{user.username}", user_url(user) %>
+    </li>
+    <% end %>
+  </ul>
 </div>
-<% end %>
+</body>
+
+<section>

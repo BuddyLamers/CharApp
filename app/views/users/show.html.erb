@@ -14,18 +14,18 @@
 <section class="sidebar">
   <ul class="sidebar-box">
      <%= title_link_count_li(
-   "All Characters", '#', @user.characters_count) %>
+   "All Characters", "#{user_url(@user, variable: 'all')}", @user.characters_count) %>
      <%= title_link_count_li(
-   "Forked", '#', @user.forked_characters.count) %>
+   "Forked", "#{user_url(@user, variable: 'forked')}", @user.forked_characters.count) %>
      <%= title_link_count_li(
-   "Starred", '#', @user.starred_characters.count) %>
+   "Starred", "#{user_url(@user, variable: 'starred')}", @user.starred_characters.count) %>
 
 
 
       <%= title_link_count_li(
-    "Public", '#', @user.public_characters.count) %>
+    "Public", "#{user_url(@user, variable: 'public')}", @user.public_characters.count) %>
       <%= title_link_count_li(
-    "Private", '#', @user.private_characters.count) %>
+    "Private", "#{user_url(@user, variable: 'private')}", @user.private_characters.count) %>
 
     <li>
       <a href="<%= new_character_url %>">New Character</a>
@@ -34,9 +34,9 @@
 </section>
 
 <main class='main-content'>
-  <% if !@user.characters.nil? %>
+  <% if !@characters.nil? %>
   <ul class="main-content-list">
-    <% @user.characters.each do |char| %>
+    <% @characters.each do |char| %>
 
     <li>
       <header class="item-header group">

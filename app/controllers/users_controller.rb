@@ -31,9 +31,23 @@ class UsersController < ApplicationController
 
   def show #OLD RAILS SHOW
     @user = User.find(params[:id])
-    #@characters = @user.characters
+    variable = params[:variable]
+    @characters = @user.characters
+    case variable
+    when "all"
+      @characters = @user.characters
+    when "forked"
+      @characters = @user.forked_characters
+    when "starred"
+      @characters = @user.starred_characters
+    when "public"
+      @characters = @user.public_characters
+    when "private"
+      @characters = @user.private_characters
+    end
+
     render :show
-    #how to get into backbone?
+
   end
 
 
