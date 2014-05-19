@@ -26,10 +26,11 @@
     "Public", "#{user_url(@user, variable: 'public')}", @user.public_characters.count) %>
       <%= title_link_count_li(
     "Private", "#{user_url(@user, variable: 'private')}", @user.private_characters.count) %>
-
+    <% if @user == current_user %>
     <li>
       <a href="<%= new_character_url %>">New Character</a>
     </li>
+    <% end %>
   </ul>
 </section>
 
