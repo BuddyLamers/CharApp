@@ -27,28 +27,28 @@ CharApp.Routers.Router = Backbone.Router.extend({
   charactersIndexPublic: function() {
     var charactersIndexView = new CharApp.Views.CharactersIndex({
       collection: this.characters.where({is_private: false})
-    })
+    });
     this._swapView(charactersIndexView)
   },
 
   charactersIndexPrivate: function() {
     var charactersIndexView = new CharApp.Views.CharactersIndex({
       collection: this.characters.where({is_private: true})
-    })
+    });
     this._swapView(charactersIndexView)
   },
 
   charactersIndexStarred: function() {
     var charactersIndexView = new CharApp.Views.CharactersIndex({
       collection: this.starredCharacters
-    })
+    });
     this._swapView(charactersIndexView)
   },
 
   charactersIndexForked: function() {
     var charactersIndexView = new CharApp.Views.CharactersIndex({
       collection: this.characters.where({is_fork_duplicate: true})
-    })
+    });
     this._swapView(charactersIndexView)
   },
 
@@ -64,8 +64,8 @@ CharApp.Routers.Router = Backbone.Router.extend({
 
   usersIndex: function(id) {
     var indexView = new CharApp.Views.UsersIndex({
-      collection: this.users,
-    })
+      collection: this.users
+    });
     this.swapView(indexView)
   },
 

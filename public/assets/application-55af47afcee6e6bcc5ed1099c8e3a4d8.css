@@ -1,0 +1,235 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 16, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+* {
+  font: inherit;
+  font-family: sans-serif !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* line 27, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+body {
+  background-image: url(/assets/tan_with_words.jpg);
+}
+
+/* line 35, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.click:hover {
+  cursor: pointer;
+  background: lightblue;
+}
+
+/* line 40, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+a:hover {
+  background: lightblue;
+}
+
+/*.button_to:hover {
+  cursor: pointer;
+}*/
+/* line 48, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+input {
+  border: 1px solid black;
+  padding: 0px 3px;
+}
+
+/* line 53, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 59, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.page-header {
+  display: block;
+  padding: 20px 0px;
+  margin: auto;
+  width: 1000px;
+}
+
+/* line 66, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.title-text {
+  font-size: 24px;
+}
+
+/* line 70, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.info {
+  float: left;
+  margin-top: 5px;
+}
+
+/* line 75, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.info > li {
+  float: left;
+}
+
+/* line 79, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.info > li > a {
+  padding: 5px 5px;
+}
+
+/* line 82, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.social {
+  float: right;
+}
+
+/* line 86, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.social > li {
+  float: left;
+  padding: 5px 5px;
+}
+
+/* line 95, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.sidebar {
+  float: left;
+  width: 200px;
+  margin: auto;
+}
+
+/* line 101, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.sidebar-box {
+  border: 1px solid black;
+  width: 165px;
+  box-shadow: 0 0 1em black;
+}
+
+/* line 107, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.sidebar-box > li {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  text-align: right;
+}
+
+/* line 114, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.sidebar-box > li > a {
+  padding: 5px;
+  display: block;
+}
+
+/*could also be i .tagline*/
+/* line 120, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.sidebar > i {
+  padding-bottom: 10px;
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* line 127, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.count {
+  font-weight: normal;
+  padding: 2px 5px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+/* line 136, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.content {
+  width: 1000px;
+  margin: auto;
+}
+
+/* line 141, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.main-content {
+  float: left;
+  width: 800px;
+  display: block;
+  margin: auto;
+}
+
+/* line 153, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.main-content-list > li {
+  margin: auto;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+/* line 175, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.item-header {
+  background: #2F4F2E;
+  padding: 3px;
+}
+
+/* line 180, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.item-body-text {
+  padding: 3px;
+}
+
+/* line 184, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.item-body-text > input {
+  width: 442px;
+  height: auto;
+}
+
+/* line 190, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.body-text {
+  margin-top: 20px;
+}
+
+/**/
+/* line 196, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.navbar {
+  background: #2F4F2E;
+  width: 1000px;
+  margin: auto;
+}
+
+/* line 202, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.navbar-wrap {
+  background: #2F4F2E;
+  border-bottom: 1px solid black;
+}
+
+/* line 215, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.info-vertical {
+  float: left;
+}
+
+/* line 219, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.comment {
+  width: 450px;
+}
+
+/* line 223, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.dropdown-item {
+  background: white;
+  position: absolute;
+  display: none;
+  font-size: 12px;
+  width: 500px;
+  left: -200px;
+}
+
+/* line 232, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.dropdown-item > li {
+  padding: 3px;
+  border: 1px solid black;
+}
+
+/* line 237, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.dropdown-list {
+  position: relative;
+}
+
+/* line 241, /Users/appacademy/Desktop/CharApp/app/assets/stylesheets/application.css.scss */
+.dropdown-list:hover .dropdown-item {
+  position: absolute;
+  display: block;
+}
