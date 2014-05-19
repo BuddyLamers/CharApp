@@ -23,7 +23,6 @@
 
 
   <ul class="social">
-    <li>settings</li>
     <% if @character.creator == current_user %>
     <li>
     <%= button_to "Edit",
@@ -93,7 +92,7 @@ detail _show -->
 <main class='main-content'>
 
 <% case @variable  %>
-<% when 'details'  %>
+<% when 'details', nil  %>
   <% if !@character.details.nil? %>
   <ul class="main-content-list">
     <%= render @character.details %>
@@ -115,17 +114,22 @@ detail _show -->
   <ul class="main-content-list">
     <% if @character.duplicate_characters %>
       <% @character.duplicate_characters.each do |char| %>
-      <!-- <li>
+      <li>
         <ul class="info">
           <li>
             <a href="user_url(<%= char.creator%>)"><%= char.creator.username %></a>
           </li>
           <li>
-            <a href="character_url(<%= char)"><%= char.name %></a>
+            <a href="character_url(<%= char %>)"><%= char.name %></a>
+          </li>
+          <li>
+            <i>
+              Forked <%= time_ago_in_words(char.created_at) %> ago.
+            </i>
           </li>
         </ul>
 
-      </li> -->
+      </li>
       <% end %>
     <% end  %>
 
@@ -134,6 +138,16 @@ detail _show -->
 
 
 <% when 'stars'  %>
+  <ul class="main-content-list">
+
+    <% @character.starrers.each do |user| %>
+    <li>
+          <a href="user_url(<%= user %>)"><%= user.username %></a>
+    </li>
+    <% end %>
+
+  </ul>
+
 
 <% end  %>
 

@@ -36,6 +36,12 @@ class Character < ActiveRecord::Base
    primary_key: :id
    )
 
+   has_many(
+   :starrers,
+   through: :stars,
+   source: :user
+   )
+
   has_many(
   :duplicate_forks, inverse_of: :from_character,
   counter_cache: :duplicate_forks_count,

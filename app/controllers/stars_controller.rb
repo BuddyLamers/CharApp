@@ -2,7 +2,7 @@ class StarsController < ApplicationController
 
   def create
       # character = Character.find(params[:character_id])
-      fail
+
       star = Star.new(user_id: current_user.id,
                       character_id: params[:character_id])
       star.save!
