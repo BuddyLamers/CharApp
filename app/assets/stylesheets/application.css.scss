@@ -227,7 +227,7 @@ input {
 }
 
 .dropdown-item {
-  background: white;
+  background: #095910;
   position: absolute;
   display: none;
   font-size: 12px;
@@ -247,4 +247,8 @@ input {
 .dropdown-list:hover .dropdown-item {
   position: absolute;
   display: block;
+}
+.bare-list > li {
+  background: #095910;
+  border: 1px solid black;
 }

@@ -7,10 +7,10 @@
 
 
   <div class="main-content">
-    <ul>
+    <ul class="bare-list">
       <%= render partial: "notifications/notification", collection: current_user.notifications.unread %>
     </ul>
-    <ul>
+    <ul class="bare-list">
       <%= render partial: "notifications/notification", collection: current_user.notifications.read %>
     </ul>
   </div>
