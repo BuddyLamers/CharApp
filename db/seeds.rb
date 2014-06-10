@@ -1,3 +1,4 @@
+#encoding: utf-8
 
 User.create!([
   {username: "Buddy", email: "buddylamers@gmail.com", password_digest: "$2a$10$T9s2lS5orxCJnJKygG2RDu/B0fS4eQitcuXVHUSQiMx5Ed85o8gNa", token: "d_8u7uNE56L4SCXX6gX0JQ", activated: true, activation_token: "zFlGMBKpEoPSBNMa7Lkrsw", characters_count: 0, stars_count: 0, received_messages_count: 0, sent_messages_count: 0, private: false},
