@@ -49,7 +49,11 @@ body {
 /* line 41, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 46, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 a {
-  color: #789485;
+  /*color: #789485;*/
+  /*color:#f7f4d7;*/
+  color: #E3DFBC;
+  text-shadow: 2px 1px 1px rgba(44, 76, 51, 1);
+
 }
 
 /* line 48, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
@@ -137,8 +141,13 @@ input {
   border: 1px solid black;
   width: 165px;
   box-shadow: 0 0 1em black;
-  background: #095910;
+  /*background: #095910;*/
   border-radius: 10px;
+  background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
+  background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#015909", endColorstr="#679e31");  background: -o-linear-gradient(top,#015909,679e31);
+
+  background-color:#015909;
 }
 
 /* line 117, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
@@ -195,31 +204,31 @@ input {
 
 /* line 163, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 174, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
-.main-content-list > li {
+/*.main-content-list > li {
   margin: auto;
   border: 1px solid black;
   margin-bottom: 20px;
   border-radius: 10px;
-}
+}*/
 
 /* line 185, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 182, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
-.item-header {
+/*.item-header {
   background: #095910;
   padding: 3px;
   border-radius: 7px 7px 0px 0px;
 }
-
+*/
 /* line 190, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 189, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
-.item-body-text {
+/*.item-body-text {
   padding: 3px;
-}
+}*/
 
 /* line 194, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 194, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .item-body-text > input {
-  width: 442px;
+  width: 100%;
   height: auto;
 }
 
@@ -253,14 +262,18 @@ input {
 
 /* line 229, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 224, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
-.comment {
-  width: 450px;
-}
+
 
 /* line 233, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 229, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .dropdown-item {
-  background: #095910;
+  background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
+  background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#015909", endColorstr="#679e31");  background: -o-linear-gradient(top,#015909,679e31);
+
+  background-color:#015909;
+
+  /*background: #095910;*/
   position: absolute;
   display: none;
   font-size: 12px;
@@ -338,7 +351,7 @@ input {
 .main-content-table {
   margin:0px;padding:0px;
   width:100%;
-  box-shadow: 10px 10px 5px #888888;
+  /*box-shadow: 10px 10px 5px #888888;*/
   border:1px solid #000000;
   
   -moz-border-radius-bottomleft:13px;
@@ -356,12 +369,14 @@ input {
   -moz-border-radius-topleft:13px;
   -webkit-border-top-left-radius:13px;
   border-top-left-radius:13px;
+
 }.main-content-table table{
     border-collapse: collapse;
         border-spacing: 0;
   width:100%;
   height:100%;
   margin:0px;padding:0px;
+
 }.main-content-table tr:last-child td:last-child {
   -moz-border-radius-bottomright:13px;
   -webkit-border-bottom-right-radius:13px;
@@ -397,7 +412,7 @@ input {
   font-size:14px;
   font-family:Times New Roman;
   font-weight:normal;
-  color:#000000;
+  color: black !important;
 }.main-content-table tr:last-child td{
   border-width:0px 1px 0px 0px;
 }.main-content-table tr td:last-child{
@@ -405,6 +420,11 @@ input {
 }.main-content-table tr:last-child td:last-child{
   border-width:0px 0px 0px 0px;
 }
+.main-content-table td a{
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  }
 .main-content-table tr:first-child td{
     background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
   background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
@@ -431,4 +451,78 @@ input {
 }
 .main-content-table tr:first-child td:last-child{
   border-width:0px 0px 1px 1px;
+}
+
+.main-content-list > li {
+  /*same as table*/
+  /*margin:0px;*/
+  padding:0px;
+  /*width:100%;*/
+  /*box-shadow: 10px 10px 5px #888888;*/
+  border:1px solid #000000;
+  
+  -moz-border-radius-bottomleft:13px;
+  -webkit-border-bottom-left-radius:13px;
+  border-bottom-left-radius:13px;
+  
+  -moz-border-radius-bottomright:13px;
+  -webkit-border-bottom-right-radius:13px;
+  border-bottom-right-radius:13px;
+  
+  -moz-border-radius-topright:13px;
+  -webkit-border-top-right-radius:13px;
+  border-top-right-radius:13px;
+  
+  -moz-border-radius-topleft:13px;
+  -webkit-border-top-left-radius:13px;
+  border-top-left-radius:13px;
+  border-collapse: collapse;
+        border-spacing: 0;
+  /*width:100%;*/
+  height:100%;
+  padding:0px;
+  margin-bottom: 10px;
+}
+
+
+.item-header{
+  /*.main-content-list li > header*/
+  /*same as first tr*/
+   -moz-border-radius-topleft:10px;
+  -webkit-border-top-left-radius:10px;
+  border-top-left-radius:10px;
+  -moz-border-radius-topright:10px;
+  -webkit-border-top-right-radius:10px;
+  border-top-right-radius:10px;
+   background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
+  background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#015909", endColorstr="#679e31");  background: -o-linear-gradient(top,#015909,679e31);
+
+  background-color:#015909;
+  border:0px solid #000000;
+  /*text-align:center;*/
+  border-width:0px 0px 1px 1px;
+  /*font-size:18px;*/
+  font-family:Helvetica;
+  /*font-weight:bold;*/
+  padding: 7px;
+
+}
+
+.item-body-text{
+  /*.main-content-list li > div*/
+  /*same as subsequent tr's*/
+  background-color:#deedad;
+  padding: 7px;
+  -moz-border-radius-bottomright:13px;
+  -webkit-border-bottom-right-radius:13px;
+  border-bottom-right-radius:13px;
+  -moz-border-radius-bottomleft:13px;
+  -webkit-border-bottom-left-radius:13px;
+  border-bottom-left-radius:13px;
+}
+
+.comment {
+  width: 450px;
+  margin: auto;
 }
