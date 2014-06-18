@@ -242,7 +242,12 @@ input {
 /* line 206, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 206, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .navbar {
-  background: #095910;
+  /*background: #095910;*/
+  background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
+  background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#015909", endColorstr="#679e31");  background: -o-linear-gradient(top,#015909,679e31);
+
+  background-color:#015909;
   width: 1000px;
   margin: auto;
 }
@@ -250,7 +255,12 @@ input {
 /* line 212, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 213, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .navbar-wrap {
-  background: #095910;
+  /*background: #095910;*/
+  background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
+  background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#015909", endColorstr="#679e31");  background: -o-linear-gradient(top,#015909,679e31);
+
+  background-color:#015909;
   border-bottom: 1px solid black;
 }
 
@@ -303,9 +313,37 @@ input {
 
 /* line 255, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 /* line 256, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+.bare-list {
+  background:-o-linear-gradient(bottom, #015909 5%, #679e31 100%);  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #015909), color-stop(1, #679e31) );
+  background:-moz-linear-gradient( center top, #015909 5%, #679e31 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#015909", endColorstr="#679e31");  background: -o-linear-gradient(top,#015909,679e31);
+  background-color:#015909;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.bare-list > li:first-child {
+   -moz-border-radius-topleft:10px;
+  -webkit-border-top-left-radius:10px;
+  border-top-left-radius:10px;
+  -moz-border-radius-topright:10px;
+  -webkit-border-top-right-radius:10px;
+  border-top-right-radius:10px;
+}
+
+.bare-list > li:last-child {
+  -moz-border-radius-bottomright:13px;
+  -webkit-border-bottom-right-radius:13px;
+  border-bottom-right-radius:13px;
+  -moz-border-radius-bottomleft:13px;
+  -webkit-border-bottom-left-radius:13px;
+  border-bottom-left-radius:13px;
+}
+
 .bare-list > li {
-  background: #095910;
+  /*background: #095910;*/
   border: 1px solid black;
+  padding: 5px;
 }
 
 /* line 260, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
