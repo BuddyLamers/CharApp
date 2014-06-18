@@ -36,12 +36,15 @@
     </li>
     <li>
       <label for="message-body">Body:</label>
-      <input type="text"
+      <textarea name="message[body]"
+      value="<%=@message.body %>"
+      id="message-body"></textarea>
+      <!-- <input type="text"
       name="message[body]"
       value="<%=@message.body %>"
-      id="message-body">
+      id="message-body"> -->
     </li>
-      <p><input type="submit" value="Send Message"></p>
+      <p><input class="button" type="submit" value="Send Message"></p>
     </form>
 
 

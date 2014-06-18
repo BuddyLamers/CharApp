@@ -109,7 +109,7 @@ detail _show -->
   </ul>
 
 <% when 'forks'  %>
-  <ul class="main-content-list">
+  <ul class="main-content">
     <% if @character.duplicate_characters %>
       <% @character.duplicate_characters.each do |char| %>
       <li>
@@ -136,7 +136,7 @@ detail _show -->
 
 
 <% when 'stars'  %>
-  <ul class="main-content-list">
+  <ul class="main-content">
 
     <% @character.starrers.each do |user| %>
     <li>

@@ -1,17 +1,18 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
- *
+ * this is a test
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
- */
 
+
+ */
+/* line 16, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 16, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 * {
   font: inherit;
   font-family: sans-serif !important;
@@ -20,30 +21,39 @@
   border: 0;
   list-style: none;
   text-decoration: none;
-
 }
-//http://fantasystock.deviantart.com/art/Seamless-Parchment-Texture-58517493?q=boost%3Apopular%20in%3Aresources%20seamless&qo=10
+
+/* line 26, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+textarea {
+  resize: none;
+  overflow: auto;
+  width: 700px;
+  height: 100px;
+  display: block;
+  border: 1px solid black;
+}
+
+/* line 27, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 35, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 body {
-	//background-image: image-url('Brown-Paper.jpg');
   background-color: #EDEBB7;
 }
 
-.click {
-
-}
-
+/* line 36, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 40, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .click:hover {
   cursor: pointer;
   background: lightblue;
 }
 
+/* line 41, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 46, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 a {
-  //color: #D3DED7;
-  //color: #CBD1CD;
-  //color: #CCCFCD;
   color: #789485;
 }
 
+/* line 48, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 51, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 a:hover {
   background: #05083B;
 }
@@ -51,18 +61,23 @@ a:hover {
 /*.button_to:hover {
   cursor: pointer;
 }*/
-
+/* line 56, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 59, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 input {
   border: 1px solid black;
   padding: 0px 3px;
 }
 
+/* line 61, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 65, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .group:after {
   content: "";
   display: block;
   clear: both;
 }
 
+/* line 67, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 72, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .page-header {
   display: block;
   padding: 20px 0px;
@@ -70,62 +85,80 @@ input {
   width: 1000px;
 }
 
-.title-text{
+/* line 74, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 80, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+.title-text {
   font-size: 24px;
 }
 
+/* line 78, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 85, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .info {
   float: left;
   margin-top: 5px;
 }
 
+/* line 83, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 91, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .info > li {
   float: left;
 }
 
+/* line 87, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 96, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .info > li > a {
   padding: 5px 5px;
 }
+
+/* line 90, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 101, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .social {
   float: right;
 }
 
+/* line 94, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 106, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .social > li {
   float: left;
   padding: 5px 5px;
-
-}
-.header-text {
-
 }
 
+/* line 103, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 112, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .sidebar {
   float: left;
   width: 200px;
   margin: auto;
 }
 
+/* line 109, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 119, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .sidebar-box {
   border: 1px solid black;
   width: 165px;
   box-shadow: 0 0 1em black;
- background: #095910;
- border-radius: 10px;
+  background: #095910;
+  border-radius: 10px;
 }
 
+/* line 117, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 128, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .sidebar-box > li {
   font-weight: bold;
-
   border-bottom: 1px solid black;
   text-align: right;
 }
 
+/* line 124, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 135, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .sidebar-box > li > a {
   padding: 5px;
   display: block;
 }
 
 /*could also be i .tagline*/
+/* line 130, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 142, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .sidebar > i {
   padding-bottom: 10px;
   display: block;
@@ -133,6 +166,8 @@ input {
   font-size: 14px;
 }
 
+/* line 137, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 150, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .count {
   font-weight: normal;
   padding: 2px 5px;
@@ -142,11 +177,15 @@ input {
   font-size: 12px;
 }
 
+/* line 146, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 160, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .content {
   width: 1000px;
   margin: auto;
 }
 
+/* line 151, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 166, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .main-content {
   float: left;
   width: 800px;
@@ -154,81 +193,72 @@ input {
   margin: auto;
 }
 
-.main-content-list {
-
-
-}
-
+/* line 163, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 174, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .main-content-list > li {
- margin: auto;
- border: 1px solid black;
- margin-bottom: 20px;
+  margin: auto;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
-.main-content-table {
-
-}
-
-.main-content-table > tr {
-
-}
-
-.main-content-table > .unread {
-
-}
-
-.main-content-table > .read {
-
-}
-
+/* line 185, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 182, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .item-header {
   background: #095910;
   padding: 3px;
+  border-radius: 7px 7px 0px 0px;
 }
 
+/* line 190, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 189, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .item-body-text {
   padding: 3px;
 }
 
+/* line 194, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 194, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .item-body-text > input {
   width: 442px;
   height: auto;
-
 }
 
+/* line 200, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 200, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .body-text {
   margin-top: 20px;
 }
 
 /**/
-
+/* line 206, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 206, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .navbar {
   background: #095910;
   width: 1000px;
   margin: auto;
 }
 
+/* line 212, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 213, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .navbar-wrap {
   background: #095910;
   border-bottom: 1px solid black;
 }
 
-.errors {
-
-}
-
-.name-wrap {
-
-}
-
+/* line 225, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 219, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .info-vertical {
   float: left;
 }
 
+/* line 229, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 224, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .comment {
   width: 450px;
 }
 
+/* line 233, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 229, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .dropdown-item {
   background: #095910;
   position: absolute;
@@ -238,52 +268,69 @@ input {
   left: -200px;
 }
 
+/* line 242, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 239, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .dropdown-item > li {
   padding: 3px;
   border: 1px solid black;
 }
 
+/* line 247, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 245, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .dropdown-list {
   position: relative;
 }
 
+/* line 251, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 250, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .dropdown-list:hover .dropdown-item {
   position: absolute;
   display: block;
 }
+
+/* line 255, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 256, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .bare-list > li {
   background: #095910;
   border: 1px solid black;
 }
 
+/* line 260, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 262, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .button {
-   border-top: 1px solid #0c3b04;
-   background: #829985;
-   background: -webkit-gradient(linear, left top, left bottom, from(#a8c4b0), to(#829985));
-   background: -webkit-linear-gradient(top, #a8c4b0, #829985);
-   background: -moz-linear-gradient(top, #a8c4b0, #829985);
-   background: -ms-linear-gradient(top, #a8c4b0, #829985);
-   background: -o-linear-gradient(top, #a8c4b0, #829985);
-   padding: 5px 10px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #e3e8be;
-   font-size: 14px;
-   font-family: Helvetica, Arial, Sans-Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
+  border-top: 1px solid #0c3b04;
+  background: #829985;
+  background: -webkit-gradient(linear, left top, left bottom, from(#a8c4b0), to(#829985));
+  background: -webkit-linear-gradient(top, #a8c4b0, #829985);
+  background: -moz-linear-gradient(top, #a8c4b0, #829985);
+  background: -ms-linear-gradient(top, #a8c4b0, #829985);
+  background: -o-linear-gradient(top, #a8c4b0, #829985);
+  padding: 5px 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: black 0 1px 0;
+  -moz-box-shadow: black 0 1px 0;
+  box-shadow: black 0 1px 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+  color: #e3e8be;
+  font-size: 14px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+/* line 282, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 286, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .button:hover {
-   border-top-color: #576156;
-   background: #576156;
-   color: #fafafa;
-   }
+  border-top-color: #576156;
+  background: #576156;
+  color: #fafafa;
+}
+
+/* line 287, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
+/* line 293, C:/Sites/CharApp/app/assets/stylesheets/application.css.scss */
 .button:active {
-   border-top-color: #13381a;
-   background: #13381a;
-   }
+  border-top-color: #13381a;
+  background: #13381a;
+}
