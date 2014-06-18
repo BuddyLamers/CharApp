@@ -9,8 +9,17 @@
   </section>
 
   <section class="main-content">
-    <table class="main-content-table">
-      <% @unread_messages.each do |message| %>
+    <div class="main-content-table">
+
+      <table>
+        <tr class="unread message-item">
+          <td>From</td>
+          <td>Title</td>
+          <td>Body preview</td>
+        </tr>
+
+
+        <% @unread_messages.each do |message| %>
 
         <tr class="unread message-item">
           <td><%= message.sender.username %></td>
@@ -22,26 +31,26 @@
           <td><%= message.body[0..99] %></td>
         </tr>
 
-      <% end %>
+        <% end %>
 
 
-      <% @read_messages.each do |message| %>
-      <a href="<%= message_url(message) %>">
-        <tr class="read message-item">
-          <td><%= message.sender.username %></td>
-          <td>
-            <a href="<%= message_url(message) %>">
-              <%= message.title %>
-            </a>
-          </td>
-          <td><%= message.body[0..99] %></td>
-        </tr>
-      </a>
-      <% end %>
+        <% @read_messages.each do |message| %>
+        <a href="<%= message_url(message) %>">
+          <tr class="read message-item">
+            <td><%= message.sender.username %></td>
+            <td>
+              <a href="<%= message_url(message) %>">
+                <%= message.title %>
+              </a>
+            </td>
+            <td><%= message.body[0..99] %></td>
+          </tr>
+        </a>
+        <% end %>
 
 
-    </table>
-
+      </table>
+    </div>
 
   </section>
 

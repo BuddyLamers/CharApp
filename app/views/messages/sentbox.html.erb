@@ -9,8 +9,15 @@
   </section>
 
   <section class="main-content">
-    <table class="main-content-table">
-      <% @sent_messages.each do |message| %>
+    <div  class="main-content-table">
+      <table>
+        <tr class="unread message-item">
+          <td>To</td>
+          <td>Title</td>
+          <td>Body preview</td>
+        </tr>
+
+        <% @sent_messages.each do |message| %>
 
         <tr class="read message-item">
           <td><%= message.receiver.username %></td>
@@ -20,14 +27,15 @@
             </a>
           </td>
           <td><%= message.body[0..99] %></td>
-          </a>
-        </tr>
+        </a>
+      </tr>
 
       <% end %>
     </table>
+  </div>
 
 
-  </section>
+</section>
 
 </div>
 

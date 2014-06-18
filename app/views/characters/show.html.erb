@@ -4,9 +4,9 @@
     <li>
       <div class="title-text">
         <a href="<%= user_url(@character.creator) %>">
-        <%= @character.creator.username %>
+          <%= @character.creator.username %>
         </a>
-          /
+        /
         <a href="<%= character_url(@character) %>">
           <%= @character.name %>
         </a>
@@ -25,15 +25,15 @@
   <ul class="social">
     <% if @character.creator == current_user %>
     <li>
-    <%= button_to "Edit",
-          edit_character_url(@character),
-          method: :get, class: :button%>
+      <%= button_to "Edit",
+      edit_character_url(@character),
+      method: :get, class: :button%>
     </li>
     <li>
-    <%= button_to "Delete",
-          character_url(@character),
-          method: :delete, class: :button %>
-          <!-- confirmation message with JS -->
+      <%= button_to "Delete",
+      character_url(@character),
+      method: :delete, class: :button %>
+      <!-- confirmation message with JS -->
     </li>
     <% else %>
     <li>
@@ -42,21 +42,21 @@
       <%= button_to "Fork",
       character_forks_url(@character),
       method: :post, class: :button %>
-       <% else %>
-       Forked!
-       <% end %>
+      <% else %>
+      Forked!
+      <% end %>
 
     </li>
     <% end %>
     <li>
-    <% if !current_user.has_already_starred_character?(@character) %>
-            <%= button_to "Star",
-            character_stars_url(@character),
-            method: :post, class: :button
-             %>
-             <% else %>
-             Starred!
-             <% end %>
+      <% if !current_user.has_already_starred_character?(@character) %>
+      <%= button_to "Star",
+      character_stars_url(@character),
+      method: :post, class: :button
+      %>
+      <% else %>
+      Starred!
+      <% end %>
 
     </li>
 
@@ -67,50 +67,50 @@
 <body>
 
 
-<div class="content">
-<section class="sidebar">
+  <div class="content">
+    <section class="sidebar">
 
-  <i class='tagline'><%= @character.tagline %></i>
+      <i class='tagline'><%= @character.tagline %></i>
 
 
-  <ul class="sidebar-box">
-          <%= title_link_count_li(
+      <ul class="sidebar-box">
+        <%= title_link_count_li(
         "Character Details", character_url(@character, variable: "details"), @character.details_count) %>
         <%= title_link_count_li(
-      "Forks", character_url(@character, variable: "forks"), @character.duplicate_forks_count) %>
-      <%= title_link_count_li(
-    "Stars", character_url(@character, variable: "stars"), @character.stars_count) %>
+        "Forks", character_url(@character, variable: "forks"), @character.duplicate_forks_count) %>
+        <%= title_link_count_li(
+        "Stars", character_url(@character, variable: "stars"), @character.stars_count) %>
 
 
-  </ul>
-</section>
+      </ul>
+    </section>
 
 <!-- this section should be refactoreed to render partial
-detail _show -->
-<main class='main-content'>
+  detail _show -->
+  <main class='main-content'>
 
-<% case @variable  %>
-<% when 'details', nil  %>
-  <% if !@character.details.nil? %>
-  <ul class="main-content-list">
-    <%= render @character.details %>
-  </ul>
-  <% end %>
+    <% case @variable  %>
+    <% when 'details', nil  %>
+    <% if !@character.details.nil? %>
+    <ul class="main-content-list">
+      <%= render @character.details %>
+    </ul>
+    <% end %>
 
 
 
-  <ul class="main-content-list">
+    <ul class="main-content-list">
 
       <%= render partial: 'comments/form' %>
 
 
-    <%= render @comments %>
+      <%= render @comments %>
 
-  </ul>
+    </ul>
 
-<% when 'forks'  %>
-  <ul class="main-content">
-    <% if @character.duplicate_characters %>
+    <% when 'forks'  %>
+    <ul class="main-content">
+      <% if @character.duplicate_characters %>
       <% @character.duplicate_characters.each do |char| %>
       <li>
         <ul class="info">
@@ -129,27 +129,27 @@ detail _show -->
 
       </li>
       <% end %>
+      <% end  %>
+
+    </ul>
+
+
+
+    <% when 'stars'  %>
+    <ul class="main-content">
+
+      <% @character.starrers.each do |user| %>
+      <li>
+        <a href="user_url(<%= user %>)"><%= user.username %></a>
+      </li>
+      <% end %>
+
+    </ul>
+
+
     <% end  %>
 
-  </ul>
-
-
-
-<% when 'stars'  %>
-  <ul class="main-content">
-
-    <% @character.starrers.each do |user| %>
-    <li>
-          <a href="user_url(<%= user %>)"><%= user.username %></a>
-    </li>
-    <% end %>
-
-  </ul>
-
-
-<% end  %>
-
-</main>
+  </main>
 </div>
 
 
