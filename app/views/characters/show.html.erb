@@ -109,31 +109,35 @@
     </ul>
 
     <% when 'forks'  %>
-    <ul class="main-content">
+
+    <div class="main-content-table">
       <% if @character.duplicate_characters %>
-      <% @character.duplicate_characters.each do |char| %>
-      <li>
-        <ul class="info">
-          <li>
-            <a href="user_url(<%= char.creator%>)"><%= char.creator.username %></a>
-          </li>
-          <li>
-            <a href="character_url(<%= char %>)"><%= char.name %></a>
-          </li>
-          <li>
+      <table>
+        <tr>
+          <td>
+            Forked By
+          </td>
+          <td>
+            Date
+          </td>
+        </tr>
+        <% @character.duplicate_characters.each do |char| %>
+        <tr>
+          <td>
+             <a href="user_url(<%= char.creator%>)"><%= char.creator.username %></a> / 
+             <a href="character_url(<%= char %>)"><%= char.name %></a>
+          </td>
+          <td>
             <i>
               Forked <%= time_ago_in_words(char.created_at) %> ago.
             </i>
-          </li>
-        </ul>
-
-      </li>
-      <% end %>
+          </td>
+        </tr>
+        <% end %>
       <% end  %>
-
-    </ul>
-
-
+      </table>
+    </div>
+    
 
     <% when 'stars'  %>
     <ul class="main-content">
