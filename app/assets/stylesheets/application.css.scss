@@ -110,6 +110,7 @@ input {
   width: 165px;
   box-shadow: 0 0 1em black;
  background: #095910;
+ border-radius: 10px;
 }
 
 .sidebar-box > li {
@@ -254,3 +255,35 @@ input {
   background: #095910;
   border: 1px solid black;
 }
+
+.button {
+   border-top: 1px solid #0c3b04;
+   background: #829985;
+   background: -webkit-gradient(linear, left top, left bottom, from(#a8c4b0), to(#829985));
+   background: -webkit-linear-gradient(top, #a8c4b0, #829985);
+   background: -moz-linear-gradient(top, #a8c4b0, #829985);
+   background: -ms-linear-gradient(top, #a8c4b0, #829985);
+   background: -o-linear-gradient(top, #a8c4b0, #829985);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #e3e8be;
+   font-size: 14px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #576156;
+   background: #576156;
+   color: #fafafa;
+   }
+.button:active {
+   border-top-color: #13381a;
+   background: #13381a;
+   }

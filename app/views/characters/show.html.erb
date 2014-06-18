@@ -27,12 +27,12 @@
     <li>
     <%= button_to "Edit",
           edit_character_url(@character),
-          method: :get %>
+          method: :get, class: :button%>
     </li>
     <li>
     <%= button_to "Delete",
           character_url(@character),
-          method: :delete %>
+          method: :delete, class: :button %>
           <!-- confirmation message with JS -->
     </li>
     <% else %>
@@ -41,8 +41,7 @@
       <% if !current_user.has_already_forked_character?(@character) %>
       <%= button_to "Fork",
       character_forks_url(@character),
-      method: :post
-       %>
+      method: :post, class: :button %>
        <% else %>
        Forked!
        <% end %>
@@ -53,7 +52,7 @@
     <% if !current_user.has_already_starred_character?(@character) %>
             <%= button_to "Star",
             character_stars_url(@character),
-            method: :post
+            method: :post, class: :button
              %>
              <% else %>
              Starred!
