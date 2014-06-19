@@ -27,20 +27,20 @@ CharacterDetail.create!([
   {character_id: 2, title: "The only defense", body: "It was said that only with the wisdom and vast power of Beaker, the Oldest Gaurdian of our Realm was able to thwart the infectious influence of Rebulba. So it is said. But even the ancient ones have a date of expiration. Even those that have shielded the world from forces that would have crumpled our universe to spec smaller than a pin— will one day falter in their duties."}
 ])
 Comment.create!([
-  {author_id: 3, character_id: 1, body: "I LOVE Harry Potter"},
+  {author_id: 3, character_id: 1, body: "I LOVE this character"},
   {author_id: 3, character_id: 2, body: "AWESOME!!! Keep them coming!"},
   {author_id: 3, character_id: 5, body: "This character seems to have potential. I should accept you as an apprentice."},
   {author_id: 3, character_id: 3, body: "Trust me: his ending is going to be great"},
-  {author_id: 2, character_id: 4, body: "I think Ron is a much stronger character than Harry"},
-  {author_id: 3, character_id: 1, body: "I belive Sega may want to have a word with you"},
+  {author_id: 2, character_id: 4, body: "I think this needs more backstory."},
+  {author_id: 3, character_id: 1, body: "I would be interested in hearing more"},
   {author_id: 2, character_id: 1, body: "Way past cool!"},
-  {author_id: 2, character_id: 2, body: "How can he fly?"}
+  {author_id: 2, character_id: 2, body: "What about his father?"}
 ])
 Message.create!([
-  {title: "Hey, I really like your books!", body: "Seriously! They are kindof awesome. Actually, prettymuch everyone thinks so.", sender_id: 1, receiver_id: 3, unread: true},
-  {title: "I don't get it...", body: "What's with Rebulba? Is this some sort of inside joke...", sender_id: 1, receiver_id: 2, unread: true},
-  {title: "A writer's advice", body: "Don't copy other's work... it's illegal", sender_id: 3, receiver_id: 1, unread: true},
-  {title: "A proposal for you!", body: "I find this \"Rebulba\" character intriguing... I would like to include him in my next book!", sender_id: 3, receiver_id: 2, unread: true},
+  {title: "Hey, I really like your books!", body: "Seriously! They are kindof awesome. Prettymuch everyone thinks so.", sender_id: 1, receiver_id: 3, unread: true},
+  {title: "Interested in working together?", body: "I'd like to talk to you about collaboration", sender_id: 1, receiver_id: 2, unread: true},
+  {title: "A writer's advice", body: "Just keep trying!", sender_id: 3, receiver_id: 1, unread: true},
+  {title: "A proposal for you!", body: "I find this character intriguing... I would like to include him in my next book!", sender_id: 3, receiver_id: 2, unread: true},
   {title: "Hey, I'm on your site!", body: "Awesome! Thanks dude!", sender_id: 2, receiver_id: 1, unread: true},
   {title: "How can I write as well as you?", body: "Seriously, how do you do it?", sender_id: 2, receiver_id: 3, unread: true}
 ])
